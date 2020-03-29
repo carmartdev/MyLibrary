@@ -27,7 +27,7 @@ class CartTest(TestCase):
         session = self.client.session
         session["cart"] = {book.pk: 1}
         session.save()
-        response = self.client.get(f"/cart/")
+        response = self.client.get("/cart/")
         self.assertQuerysetEqual(list(response.context["cart"]), [repr(book)])
 
     def test_delete_redirects_to_cart(self):
@@ -67,21 +67,21 @@ class CheckoutTest(TestCase):
 
 class SearchTest(TestCase):
     def test_uses_index_template(self):
-        response = self.client.get(f"/search/", {"query": "cat"}, follow=True)
+        response = self.client.get("/search/", {"query": "cat"}, follow=True)
         self.assertTemplateUsed(response, "store/index.html")
 
     def test_search_contains_books_with_keyword(self):
         book = create_book(key=1, title="Catdog", price=10)
-        response = self.client.get(f"/search/", {"query": "cat"}, follow=True)
+        response = self.client.get("/search/", {"query": "cat"}, follow=True)
         self.assertContains(response, "Catdog")
 
     def test_search_not_contains_books_without_keyword(self):
         create_book(key=2, title="dog", price=10)
-        response = self.client.get(f"/search/", {"query": "cat"}, follow=True)
+        response = self.client.get("/search/", {"query": "cat"}, follow=True)
         self.assertNotContains(response, "dog")
 
     def test_empty_search_redirects_to_homepage(self):
-        response = self.client.get(f"/search/", {"query": ""})
+        response = self.client.get("/search/", {"query": ""})
         self.assertRedirects(response, reverse("store:home"))
 
 class BookInfoTest(TestCase):
