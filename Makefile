@@ -4,10 +4,13 @@ INTERPRETER = python3
 runserver:
 	$(INTERPRETER) manage.py runserver
 
-tests: system_tests
+tests: system_tests unit_tests
 
 system_tests:
 	$(INTERPRETER) manage.py behave
+
+unit_tests:
+	$(INTERPRETER) manage.py test
 
 tags:
 	ctags -f tags -R --fields=+iaS --extras=+q $(SOURCES)
