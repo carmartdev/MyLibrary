@@ -25,6 +25,7 @@ def before_all(context):
         service_log_path=os.devnull,
         options=options
     )
+    context.test = TestCase()
     context.tmpdir = context.browser.capabilities.get("moz:profile")
     context.homepage = HOMEPAGE
 
