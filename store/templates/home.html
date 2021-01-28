@@ -4,5 +4,31 @@
     </head>
     <body>
         <h1>Bookstore</h1>
+        <a id="id_cart" title="Shopping Cart" class="uppercase" href="cart">Cart</a>
+        <table id="id_book_catalog">
+            {% for book in books %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ book.title }}</td>
+                    <td>by {{ book.author }}</td>
+                    <td>${{ book.price }}</td>
+                    <td><button type="button" class="uppercase" onclick="location.href='{{ forloop.counter }}'">add to cart</button></td>
+                </tr>
+            {% endfor %}
+        </table>
     </body>
 </html>
+<style type="text/css">
+    #id_cart {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .uppercase {
+        font-weight: bold;
+        text-transform: uppercase;"
+    }
+    table {
+        border-spacing: 2em .5em;
+    }
+</style>
