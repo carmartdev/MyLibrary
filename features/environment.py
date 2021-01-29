@@ -1,7 +1,6 @@
 #!/usr/bin/env python3.7
 # -*- coding: utf-8 -*-
 import os
-from unittest import TestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.firefox.options import Options
@@ -25,7 +24,6 @@ def before_all(context):
         service_log_path=os.devnull,
         options=options
     )
-    context.test = TestCase()
     context.tmpdir = context.browser.capabilities.get("moz:profile")
     context.homepage = HOMEPAGE
 

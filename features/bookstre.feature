@@ -7,10 +7,13 @@ Feature: Bookstore
             And she see book catalog on main page
 
         When Betty clicks «add to cart» button near 1st book
-        Then popup appears saying that book was added to her cart
+        Then she notices counter near cart button shows 1
+
+        When Betty tries to add 1st book to cart again
+        Then she notices counter near cart button shows 1
 
         When Betty clicks «add to cart» button near 2nd book
-        Then popup appears saying that book was added to her cart
+        Then she notices that counter value is now 2
 
         When Betty clicks «cart» button
         Then she see 2 recently added books in her cart
