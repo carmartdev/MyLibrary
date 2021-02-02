@@ -1,9 +1,28 @@
-from django.shortcuts import render
-from django.template import Context
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
+from django.views import generic
+from store.models import Book, CartItem
 
-def home_page(request):
-    books = [Context(dict(title=f"Book title {i}",
-                          author=f"Author {i}",
-                          price=0.0))
-             for i in range(1, 10)]
-    return render(request, "home.html", {"books": books})
+class HomePage(generic.ListView):
+    model = Book
+    template_name = "store/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({"cart_items_count": CartItem.objects.count()})
+        return context
+
+def add_to_cart(request):
+    book = get_object_or_404(Book, pk=request.POST.get("id"))
+    book = Book.objects.get(pk=request.POST.get("id"))
+    item = CartItem(book=book)
+    item.save()
+    return HttpResponseRedirect(reverse("store:home"))
+
+class CartPage(generic.ListView):
+    model = CartItem
+    template_name = "store/cart.html"
+
+def checkout(request):
+    return HttpResponseRedirect(reverse("store:home"))

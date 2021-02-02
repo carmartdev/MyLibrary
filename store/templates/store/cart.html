@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
+<html>
+    <head>
+        <title>Your Shopping Cart</title>
+    </head>
+    <body>
+        <h1>Your Shopping Cart</h1>
+        {% if cartitem_list %}
+            <form action="add" method="POST">
+                <table id="id_book_catalog">
+                    {% for item in cartitem_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>{{ item.book.title }}</td>
+                        <td>by {{ item.book.author }}</td>
+                        <td>${{ item.book.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <button onclick="location.href='{% url "store:home" %}'"
+                        type="button">
+                    continue shopping
+                </button>
+                <button onclick="location.href='{% url "store:checkout" %}'"
+                        type="button">
+                    checkout
+                </button>
+            </form>
+        {% else %}
+            <p>Your Shopping Cart is empty</p>
+            <button onclick="location.href='{% url "store:home" %}'"
+                    type="button">
+                continue shopping
+            </button>
+        {% endif %}
+    </body>
+</html>

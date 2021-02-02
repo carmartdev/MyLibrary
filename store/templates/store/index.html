@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
+<html>
+    <head>
+        <title>Bookstore</title>
+    </head>
+    <body>
+        <h1>Bookstore</h1>
+        <a id="id_cart" title="Shopping Cart" class="uppercase"
+                href="{% url 'store:cart' %}">
+            Cart
+            {% if cart_items_count %}
+                ({{ cart_items_count }})
+            {% endif %}
+        </a>
+        {% if book_list %}
+            <form action="add" method="POST">
+                {% csrf_token %}
+                <table id="id_book_catalog">
+                    {% for book in book_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>{{ book.title }}</td>
+                        <td>by {{ book.author }}</td>
+                        <td>${{ book.price }}</td>
+                        <td>
+                            <button name="id"
+                                    class="uppercase"
+                                    value="{{ book.id }}">
+                                add to cart
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </form>
+        {% else %}
+            <p>No books are available.</p>
+        {% endif %}
+    </body>
+</html>
