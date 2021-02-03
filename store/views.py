@@ -15,9 +15,9 @@ class HomePage(generic.ListView):
 
 def add_to_cart(request):
     book = get_object_or_404(Book, pk=request.POST.get("id"))
-    book = Book.objects.get(pk=request.POST.get("id"))
-    item = CartItem(book=book)
-    item.save()
+    if CartItem.objects.filter(book=book).first() is None:
+        item = CartItem(book=book)
+        item.save()
     return HttpResponseRedirect(reverse("store:home"))
 
 class CartPage(generic.ListView):
