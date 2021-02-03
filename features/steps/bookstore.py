@@ -15,7 +15,7 @@ def wait_for(fn, timeout=5):
 
 @when("Betty opens bookstore homepage in her browser")
 def load_home_page(context):
-    context.browser.get(context.homepage)
+    context.browser.get(context.base_url)
 
 @then("she notices the page title and header mention '{title}'")
 def page_title_and_header_mention_bookstore(context, title):
