@@ -4,11 +4,11 @@ Feature: Bookstore
     Background: fill test database
         Given a set of books
             | title         | author          | price |
-            | Ohlolap       | Esuuz Phohoo    |   0.0 |
-            | Aererey       | Pooepex Uojmeik |   0.0 |
-            | Ocaimuh       | Aigah Baefeix   |   0.0 |
-            | Peele Zoos    | Teo Faquiey     |   0.0 |
-            | Eupif Eengvoh | Ebohfee Acutoh  |   0.0 |
+            | Ohlolap       | Esuuz Phohoo    | 32.99 |
+            | Aererey       | Pooepex Uojmeik | 14.99 |
+            | Ocaimuh       | Aigah Baefeix   | 23.49 |
+            | Peele Zoos    | Teo Faquiey     | 88.99 |
+            | Eupif Eengvoh | Ebohfee Acutoh  | 21.99 |
 
     Scenario: Betty has heard about a cool new online bookstore.
         When Betty opens bookstore homepage in her browser

@@ -16,9 +16,8 @@ def wait_for(fn, timeout=5):
 
 @given("a set of books")
 def fill_test_database(context):
-    userdata = context.config.userdata
-    for row in context.table:
-        Book(title=row["title"], author=row["author"], price=userdata.getint(row["price"])).save()
+    for b in context.table:
+        Book(title=b["title"], author=b["author"], price=b["price"]).save()
 
 @when("Betty opens bookstore homepage in her browser")
 def load_home_page(context):
