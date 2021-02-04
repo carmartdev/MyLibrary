@@ -1,6 +1,15 @@
 Feature: Bookstore
     Betty (user) would like to order some books online.
 
+    Background: fill test database
+        Given a set of books
+            | title         | author          | price |
+            | Ohlolap       | Esuuz Phohoo    |   0.0 |
+            | Aererey       | Pooepex Uojmeik |   0.0 |
+            | Ocaimuh       | Aigah Baefeix   |   0.0 |
+            | Peele Zoos    | Teo Faquiey     |   0.0 |
+            | Eupif Eengvoh | Ebohfee Acutoh  |   0.0 |
+
     Scenario: Betty has heard about a cool new online bookstore.
         When Betty opens bookstore homepage in her browser
         Then she notices the page title and header mention 'Bookstore'

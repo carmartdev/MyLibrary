@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from time import sleep, time
 from selenium.common.exceptions import NoSuchElementException
+from store.models import Book
 
 def wait_for(fn, timeout=5):
     stime = time()
@@ -12,6 +13,12 @@ def wait_for(fn, timeout=5):
             if time() - stime > timeout:
                 raise e
             sleep(0.5)
+
+@given("a set of books")
+def fill_test_database(context):
+    userdata = context.config.userdata
+    for row in context.table:
+        Book(title=row["title"], author=row["author"], price=userdata.getint(row["price"])).save()
 
 @when("Betty opens bookstore homepage in her browser")
 def load_home_page(context):
