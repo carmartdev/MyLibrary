@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views import generic
@@ -25,4 +25,4 @@ class CartPage(generic.ListView):
     template_name = "store/cart.html"
 
 def checkout(request):
-    return HttpResponseRedirect(reverse("store:home"))
+    return HttpResponse('<html><title>Checkout</title></html>')
