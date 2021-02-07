@@ -18,10 +18,15 @@ Feature: Bookstore
         When Betty adds to cart book 'Ohlolap'
         Then she notices counter near cart button showing '1'
             And shopping cart contains book 'Ohlolap'
+            And button near book 'Ohlolap' now says 'In Cart'
 
         Given shopping cart contains book 'Ohlolap'
         When Betty tries to add book 'Ohlolap' again
-        Then she notices counter near cart button showing '1'
+        Then she is redirected to cart page
+
+        Given Betty is on cart page
+        When Betty clicks 'continue shopping' button
+        Then she is redirected to home page
 
         Given shopping cart contains book 'Ohlolap'
         When Betty adds to cart book 'Aererey'

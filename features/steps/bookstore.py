@@ -50,6 +50,12 @@ def counter_shows(context, number):
     cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
     context.test.assertIn(str(number), cart.text)
 
+@then("button near book '{book_title}' now says '{button_caption}'")
+def button_near_book_says(context, book_title, button_caption):
+    path = f"//td[contains(text(), '{book_title}')]/following::button"
+    button = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    context.test.assertEqual(button.text.upper(), "in cart".upper())
+
 @step("shopping cart contains book '{title}'")
 def cart_contains_book(context, title):
     try:
@@ -62,6 +68,15 @@ def cart_contains_book(context, title):
 @when("Betty tries to add book '{title}' again")
 def add_book_again(context, title):
     context.execute_steps(f"When Betty adds to cart book '{title}'")
+
+@when("Betty clicks '{caption}' button")
+def click_button(context, caption):
+    path = f"//button[contains(text(), '{caption}')]"
+    wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
+
+@then("she is redirected to home page")
+def buyer_can_see_home_page(context):
+    context.test.assertIn("bookstore".upper(), context.browser.title.upper())
 
 @when("Betty clicks «cart» button")
 def click_cart_button(context):

@@ -10,8 +10,8 @@
         <a id="id_cart" title="Shopping Cart" class="uppercase"
                 href="{% url 'store:cart' %}">
             Cart
-            {% if cart_items_count %}
-                ({{ cart_items_count }})
+            {% if cart|length %}
+                ({{ cart|length }})
             {% endif %}
         </a>
         {% if book_list %}
@@ -25,11 +25,20 @@
                         <td>by {{ book.author }}</td>
                         <td>${{ book.price }}</td>
                         <td>
-                            <button name="id"
-                                    class="uppercase"
-                                    value="{{ book.id }}">
-                                add to cart
-                            </button>
+                            {% if book in cart %}
+                                <button name="id"
+                                        class="uppercase"
+                                        type="button"
+                                        onclick="location.href='{% url "store:cart" %}'">
+                                    in cart
+                                </button>
+                            {% else %}
+                                <button name="id"
+                                        class="uppercase"
+                                        value="{{ book.id }}">
+                                    add to cart
+                                </button>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}

@@ -10,7 +10,7 @@ class HomePage(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update({"cart_items_count": CartItem.objects.count()})
+        context.update({"cart": [i.book for i in CartItem.objects.all()]})
         return context
 
 def add_to_cart(request):
