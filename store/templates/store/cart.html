@@ -8,17 +8,34 @@
     <body>
         <h1>Your Shopping Cart</h1>
         {% if cartitem_list %}
-            <form action="add" method="POST">
+            <form action="delete" method="POST">
+                {% csrf_token %}
                 <table id="id_book_catalog">
+                    <tr>
+                        <td>№</td>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td>Price</td>
+                        <td>Qty</td>
+                    </tr>
                     {% for item in cartitem_list %}
                     <tr>
                         <td>{{ forloop.counter }}.</td>
                         <td>{{ item.book.title }}</td>
                         <td>by {{ item.book.author }}</td>
                         <td>${{ item.book.price }}</td>
+                        <td><input type="number" min="0" size="4"
+                            value="{{ item.quantity }}"></td>
+                        <td><button name="id"
+                                    value="{{ item.id }}">
+                                ⌫
+                            </button>
+                        </td>
                     </tr>
                     {% endfor %}
                 </table>
+            </form>
+            <form>
                 <button onclick="location.href='{% url "store:home" %}'"
                         type="button">
                     continue shopping

@@ -42,5 +42,10 @@ Feature: Bookstore
             And she can see book 'Aererey' in her cart
 
         Given Betty is on cart page
+            And shopping cart contains book 'Aererey'
+        When Betty deletes from cart book 'Aererey'
+        Then shopping cart does not contain book 'Aererey'
+
+        Given Betty is on cart page
         When Betty clicks «checkout» button
         Then she is redirected to checkout page

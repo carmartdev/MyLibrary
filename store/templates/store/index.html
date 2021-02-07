@@ -18,9 +18,13 @@
             <form action="add" method="POST">
                 {% csrf_token %}
                 <table id="id_book_catalog">
+                    <tr>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td>Price</td>
+                    </tr>
                     {% for book in book_list %}
                     <tr>
-                        <td>{{ forloop.counter }}.</td>
                         <td>{{ book.title }}</td>
                         <td>by {{ book.author }}</td>
                         <td>${{ book.price }}</td>

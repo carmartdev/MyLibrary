@@ -13,6 +13,10 @@ class HomePage(generic.ListView):
         context.update({"cart": [i.book for i in CartItem.objects.all()]})
         return context
 
+def delete_from_cart(request):
+    CartItem.objects.filter(pk=request.POST.get("id")).delete()
+    return HttpResponseRedirect(reverse("store:cart"))
+
 def add_to_cart(request):
     book = get_object_or_404(Book, pk=request.POST.get("id"))
     if CartItem.objects.filter(book=book).first() is None:

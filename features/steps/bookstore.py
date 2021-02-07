@@ -57,13 +57,8 @@ def button_near_book_says(context, book_title, button_caption):
     context.test.assertEqual(button.text.upper(), "in cart".upper())
 
 @step("shopping cart contains book '{title}'")
-def cart_contains_book(context, title):
-    try:
-        CartItem.objects.get(book=Book.objects.get(title=title))
-    except CartItem.DoesNotExist:
-        context.test.fail(f"Book {title} not found in shopping cart")
-    except Book.DoesNotExist:
-        context.test.fail(f"Book {title} does not exist in catalog")
+def book_in_cart(context, title):
+    context.test.assertTrue(is_book_in_cart(title))
 
 @when("Betty tries to add book '{title}' again")
 def add_book_again(context, title):
@@ -94,6 +89,18 @@ def buyer_can_see_book_in_her_cart(context, title):
         wait_for(lambda: context.browser.find_element_by_xpath(path))
     except NoSuchElementException:
         context.test.fail(f"Buyer can't see book {title} in her cart")
+
+@when("Betty deletes from cart book '{title}'")
+def delete_book_from_cart(context, title):
+    path = f"//td[contains(text(), '{title}')]/following::button"
+    wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
+
+@step("shopping cart does not contain book '{title}'")
+def book_not_in_cart(context, title):
+    context.test.assertFalse(is_book_in_cart(title))
+
+def is_book_in_cart(title):
+    return CartItem.objects.filter(book=Book.objects.get(title=title)).count()
 
 @when("Betty clicks «checkout» button")
 def click_checkout(context):
