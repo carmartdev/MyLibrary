@@ -28,5 +28,11 @@ class CartPage(generic.ListView):
     model = CartItem
     template_name = "store/cart.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        total_price = sum(i.quantity * i.book.price for i in CartItem.objects.all())
+        context.update({"total_price": total_price})
+        return context
+
 def checkout(request):
     return render(request, "store/checkout.html")

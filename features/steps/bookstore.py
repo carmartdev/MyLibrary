@@ -102,6 +102,11 @@ def book_not_in_cart(context, title):
 def is_book_in_cart(title):
     return CartItem.objects.filter(book=Book.objects.get(title=title)).count()
 
+@then("she can see that subtotal for her order is '{value}'")
+def subtotal_is(context, value):
+    t = wait_for(lambda: context.browser.find_element_by_id("id_total_price"))
+    context.test.assertEqual(value, t.text)
+
 @when("Betty clicks «checkout» button")
 def click_checkout(context):
     wait_for(lambda: context.browser.find_element_by_id("id_checkout_button")

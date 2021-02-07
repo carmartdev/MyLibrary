@@ -42,6 +42,11 @@ Feature: Bookstore
             And she can see book 'Aererey' in her cart
 
         Given Betty is on cart page
+            And shopping cart contains book 'Ohlolap'
+            And shopping cart contains book 'Aererey'
+        Then she can see that subtotal for her order is '$47.98'
+
+        Given Betty is on cart page
             And shopping cart contains book 'Aererey'
         When Betty deletes from cart book 'Aererey'
         Then shopping cart does not contain book 'Aererey'
