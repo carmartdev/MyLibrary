@@ -19,7 +19,12 @@ def fill_test_database(context):
     for b in context.table:
         Book(title=b["title"], author=b["author"], price=b["price"]).save()
 
+@given("new browser session is started")
+def clear_cookies(context):
+    context.browser.delete_all_cookies()
+
 @given("Betty opens bookstore homepage in her browser")
+@given("Tang opens bookstore homepage in his browser")
 def load_home_page(context):
     context.browser.get(context.base_url)
 
@@ -37,8 +42,10 @@ def book_catalog_on_main_page(context):
         context.test.fail("Book catalog not found on main page")
 
 @given("shopping cart is empty")
+@then("his shopping cart is empty")
 def cart_is_empty(context):
-    context.test.assertEqual(CartItem.objects.count(), 0)
+    cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
+    context.test.assertEqual("cart".upper(), cart.text.upper())
 
 @when("Betty adds to cart book '{title}'")
 def add_book_to_cart(context, title):

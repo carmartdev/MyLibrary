@@ -10,3 +10,4 @@ class Book(models.Model):
 class CartItem(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
+    session_key = models.CharField(max_length=32)

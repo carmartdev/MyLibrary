@@ -54,3 +54,7 @@ Feature: Bookstore
         Given Betty is on cart page
         When Betty clicks «checkout» button
         Then she is redirected to checkout page
+
+        Given new browser session is started
+            And Tang opens bookstore homepage in his browser
+        Then his shopping cart is empty
