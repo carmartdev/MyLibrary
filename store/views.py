@@ -1,56 +1,42 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
-from store.models import Book, CartItem
+from store.models import Book
 
 class HomePage(generic.ListView):
     model = Book
+    context_object_name = "books"
     template_name = "store/index.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        cart_items = get_cart_items(self.request)
-        context["cart"] = tuple(i.book for i in cart_items)
-        return context
-
 def delete_from_cart(request):
-    cart_items = get_cart_items(request)
-    cart_items.filter(pk=request.POST.get("id")).delete()
-    return HttpResponseRedirect(reverse("store:cart"))
+    book_id = request.POST.get("id")
+    cart = request.session.get("cart", {})
+    cart.pop(book_id)
+    request.session["cart"] = cart
+    return redirect("store:cart")
 
 def add_to_cart(request):
     book = get_object_or_404(Book, pk=request.POST.get("id"))
-    cart_items = get_cart_items(request)
-    if cart_items.filter(book=book).first() is None:
-        sk = get_or_create_session_key(request)
-        item = CartItem(book=book, session_key=sk)
-        item.save()
-    return HttpResponseRedirect(reverse("store:home"))
+    cart = request.session.get("cart", {})
+    cart[book.pk] = 1
+    request.session["cart"] = cart
+    return redirect("store:home")
 
 class CartPage(generic.ListView):
-    model = CartItem
+    model = Book
+    context_object_name = "cart"
     template_name = "store/cart.html"
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        sk = get_or_create_session_key(self.request)
-        return queryset.filter(session_key=sk)
+        cart = self.request.session.get("cart", {})
+        return queryset.filter(pk__in=cart.keys())
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["total_price"] = sum(i.quantity * i.book.price
-                                     for i in get_cart_items(self.request))
+        cart = self.request.session.get("cart", {})
+        context["total_price"] = sum(Book.objects.get(pk=book_id).price * qty
+                                     for book_id, qty in cart.items())
         return context
 
 def checkout(request):
     return render(request, "store/checkout.html")
-
-def get_or_create_session_key(request):
-    if request.session.session_key is None:
-        request.session.create()
-    return request.session.session_key
-
-def get_cart_items(request):
-    sk = get_or_create_session_key(request)
-    return CartItem.objects.filter(session_key=sk)

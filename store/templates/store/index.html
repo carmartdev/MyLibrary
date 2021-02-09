@@ -10,11 +10,11 @@
         <a id="id_cart" title="Shopping Cart" class="uppercase"
                 href="{% url 'store:cart' %}">
             Cart
-            {% if cart|length %}
-                ({{ cart|length }})
+            {% if request.session.cart|length %}
+                ({{ request.session.cart|length }})
             {% endif %}
         </a>
-        {% if book_list %}
+        {% if books %}
             <form action="add" method="POST">
                 {% csrf_token %}
                 <table id="id_book_catalog">
@@ -23,13 +23,13 @@
                         <td>Author</td>
                         <td>Price</td>
                     </tr>
-                    {% for book in book_list %}
+                    {% for book in books %}
                     <tr>
                         <td>{{ book.title }}</td>
                         <td>by {{ book.author }}</td>
                         <td>${{ book.price }}</td>
                         <td>
-                            {% if book in cart %}
+                            {% if book.pk|stringformat:"i" in request.session.cart %}
                                 <button name="id"
                                         class="uppercase"
                                         type="button"

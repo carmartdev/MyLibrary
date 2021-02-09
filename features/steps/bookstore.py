@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from time import sleep, time
 from selenium.common.exceptions import NoSuchElementException
-from store.models import CartItem, Book
+from store.models import Book
 
 def wait_for(fn, timeout=5):
     stime = time()
@@ -65,7 +65,7 @@ def button_near_book_says(context, book_title, button_caption):
 
 @step("shopping cart contains book '{title}'")
 def book_in_cart(context, title):
-    context.test.assertTrue(is_book_in_cart(title))
+    context.test.assertTrue(is_book_in_cart(context, title))
 
 @when("Betty tries to add book '{title}' again")
 def add_book_again(context, title):
@@ -104,10 +104,13 @@ def delete_book_from_cart(context, title):
 
 @step("shopping cart does not contain book '{title}'")
 def book_not_in_cart(context, title):
-    context.test.assertFalse(is_book_in_cart(title))
+    context.test.assertFalse(is_book_in_cart(context, title))
 
-def is_book_in_cart(title):
-    return CartItem.objects.filter(book=Book.objects.get(title=title)).count()
+def is_book_in_cart(context, title):
+    session_key = context.browser.get_cookie("sessionid").get("value")
+    cart = context.session_store(session_key=session_key).get("cart")
+    book_id = Book.objects.get(title=title).pk
+    return str(book_id) in cart
 
 @then("she can see that subtotal for her order is '{value}'")
 def subtotal_is(context, value):

@@ -5,6 +5,8 @@ from behave import fixture, use_fixture
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.firefox.options import Options
+from importlib import import_module
+from django.conf import settings
 
 BROWSER_PATH = "/usr/bin/firefox"
 
@@ -35,3 +37,4 @@ def selenium_browser_firefox(context):
 
 def before_all(context):
     use_fixture(selenium_browser_firefox, context)
+    context.session_store = import_module(settings.SESSION_ENGINE).SessionStore
