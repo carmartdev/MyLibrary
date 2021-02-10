@@ -41,6 +41,14 @@ def book_catalog_on_main_page(context):
     except NoSuchElementException:
         context.test.fail("Book catalog not found on main page")
 
+@then("she can see link to her cart in the top right corner")
+def cart_link_is_in_top_right_corner(context):
+    context.browser.set_window_size(1024, 768)
+    cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
+    context.test.assertAlmostEqual(cart.location["x"] + cart.size["width"],
+                                   1024, delta=20)
+    context.test.assertAlmostEqual(cart.location["y"], 0, delta=20)
+
 @given("shopping cart is empty")
 @then("his shopping cart is empty")
 def cart_is_empty(context):

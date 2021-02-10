@@ -1,0 +1,20 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+              href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'store/style.css' %}">
+        <link rel="shortcut icon" type="image/png"
+              href="{% static 'store/favicon.ico' %}"/>
+        <title>{% block title_text %}{% endblock %}</title>
+    </head>
+    <body>
+        <h1>{% block header_text %}{% endblock %}</h1>
+        {% block body %}{% endblock %}
+    </body>
+</html>

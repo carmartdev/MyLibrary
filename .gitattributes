@@ -1,0 +1,2 @@
+# exclude bootstrap from language statistics
+store/static/bootstrap/** linguist-vendored

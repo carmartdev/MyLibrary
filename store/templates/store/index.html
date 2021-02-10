@@ -1,55 +1,54 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
-<link rel="shortcut icon" type="image/png" href="{% static 'store/favicon.ico' %}"/>
-<html>
-    <head>
-        <title>Bookstore</title>
-    </head>
-    <body>
-        <h1>Bookstore</h1>
-        <a id="id_cart" title="Shopping Cart" class="uppercase"
-                href="{% url 'store:cart' %}">
-            Cart
-            {% if request.session.cart|length %}
-                ({{ request.session.cart|length }})
-            {% endif %}
-        </a>
-        {% if books %}
-            <form action="add" method="POST">
-                {% csrf_token %}
-                <table id="id_book_catalog">
+{% extends "store/base.html" %}
+{% block title_text %}Bookstore{% endblock %}
+{% block header_text %}Bookstore{% endblock %}
+{% block body %}
+    <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold position-absolute top-0 end-0 mx-2 my-2 btn btn-outline-secondary"
+            href="{% url 'store:cart' %}">
+        Cart
+        {% if request.session.cart|length %}
+            [{{ request.session.cart|length }}]
+        {% endif %}
+    </a>
+    {% if books %}
+        <form action="add" method="POST">
+            {% csrf_token %}
+            <table id="id_book_catalog" class="table table-borderless table-striped">
+                <thead>
                     <tr>
-                        <td>Title</td>
-                        <td>Author</td>
-                        <td>Price</td>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th></th>
                     </tr>
+                </thead>
+                <tbody>
                     {% for book in books %}
-                    <tr>
+                    <tr class="align-middle">
                         <td>{{ book.title }}</td>
                         <td>by {{ book.author }}</td>
                         <td>${{ book.price }}</td>
                         <td>
                             {% if book.pk|stringformat:"i" in request.session.cart %}
-                                <button name="id"
-                                        class="uppercase"
-                                        type="button"
-                                        onclick="location.href='{% url "store:cart" %}'">
-                                    in cart
-                                </button>
+                            <button name="id"
+                                    class="text-uppercase fw-bold btn btn-secondary"
+                                    type="button"
+                                    onclick="location.href='{% url "store:cart" %}'">
+                                in cart
+                            </button>
                             {% else %}
-                                <button name="id"
-                                        class="uppercase"
-                                        value="{{ book.id }}">
-                                    add to cart
-                                </button>
+                            <button name="id"
+                                    class="text-uppercase fw-bold btn btn-outline-secondary"
+                                    value="{{ book.id }}">
+                                add to cart
+                            </button>
                             {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
-                </table>
-            </form>
-        {% else %}
-            <p>No books are available.</p>
-        {% endif %}
-    </body>
-</html>
+                </tbody>
+            </table>
+        </form>
+    {% else %}
+        <p>No books are available.</p>
+    {% endif %}
+{% endblock %}

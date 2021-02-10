@@ -1,11 +1,3 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
-<link rel="shortcut icon" type="image/png" href="{% static 'store/favicon.ico' %}"/>
-<html>
-    <head>
-        <title>Checkout</title>
-    </head>
-    <body>
-        <h1>Here will be checkout page one day</h1>
-    </body>
-</html>
+{% extends "store/base.html" %}
+{% block title_text %}Checkout{% endblock %}
+{% block header_text %}Here will be checkout page one day{% endblock %}

@@ -21,6 +21,6 @@ include_tags:
 
 clean:
 	rm -rf tags include_tags __pycache__ */__pycache__ */*/__pycache__ \
-		.mypy_cache */.mypy_cache */*/.mypy_cache .coverage htmlcov
+		.mypy_cache */.mypy_cache */*/.mypy_cache .coverage htmlcov static
 
 .PHONY: clean include_tags tags

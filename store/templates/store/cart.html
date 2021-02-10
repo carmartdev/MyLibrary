@@ -1,65 +1,67 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
-<link rel="shortcut icon" type="image/png" href="{% static 'store/favicon.ico' %}"/>
-<html>
-    <head>
-        <title>Your Shopping Cart</title>
-    </head>
-    <body>
-        <h1>Your Shopping Cart</h1>
-        {% if cart %}
-            <form action="delete" method="POST">
-                {% csrf_token %}
-                <table id="id_book_catalog">
+{% extends "store/base.html" %}
+{% block title_text %}Your Shopping Cart{% endblock %}
+{% block header_text %}Your Shopping Cart{% endblock %}
+{% block body %}
+    {% if cart %}
+        <form action="delete" method="POST">
+            {% csrf_token %}
+            <table id="id_book_catalog" class="table table-borderless table-striped">
+                <thead>
                     <tr>
-                        <td>№</td>
-                        <td>Title</td>
-                        <td>Author</td>
-                        <td>Qty</td>
-                        <td>Price</td>
+                        <th>№</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th></th>
                     </tr>
+                </thead>
+                <tbody>
                     {% for item in cart %}
-                    <tr>
+                    <tr class="align-middle">
                         <td>{{ forloop.counter }}.</td>
                         <td>{{ item.title }}</td>
                         <td>by {{ item.author }}</td>
                         <td><input type="number" min="0" size="4"
-                            value="1"></td>
+                                                         value="1"></td>
                         <td>${{ item.price }}</td>
-                        <td><button name="id"
-                                    value="{{ item.pk }}">
-                                ⌫
+                        <td>
+                            <button name="id"
+                                    value="{{ item.pk }}"
+                                    class="btn-close"
+                                    aria-label="Close">
                             </button>
                         </td>
                     </tr>
                     {% endfor %}
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Subtotal</td>
-                        <td id="id_total_price">${{ total_price }}</td>
-                        <td></td>
-                    </tr>
-                </table>
-            </form>
-            <form>
-                <button onclick="location.href='{% url "store:home" %}'"
-                        type="button">
-                    continue shopping
-                </button>
-                <button onclick="location.href='{% url "store:checkout" %}'"
-                        id="id_checkout_button"
-                        type="button">
-                    checkout
-                </button>
-            </form>
-        {% else %}
-            <p>Your Shopping Cart is empty</p>
+                </tbody>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Subtotal</th>
+                    <th id="id_total_price">${{ total_price }}</th>
+                    <th></th>
+                </tr>
+                </thead>
+            </table>
+        </form>
+        <form class="position-absolute end-0 mx-5">
             <button onclick="location.href='{% url "store:home" %}'"
-                    type="button">
+                    type="button" class="btn btn-primary mx-2">
                 continue shopping
             </button>
-        {% endif %}
-    </body>
-</html>
+            <button onclick="location.href='{% url "store:checkout" %}'"
+                    id="id_checkout_button" type="button" class="btn btn-primary">
+                checkout
+            </button>
+        </form>
+    {% else %}
+        <p>Your Shopping Cart is empty</p>
+        <button onclick="location.href='{% url "store:home" %}'"
+                type="button" class="btn btn-primary mx-2">
+            continue shopping
+        </button>
+    {% endif %}
+{% endblock %}
