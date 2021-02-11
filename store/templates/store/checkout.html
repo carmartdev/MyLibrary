@@ -1,3 +1,9 @@
 {% extends "store/base.html" %}
 {% block title_text %}Checkout{% endblock %}
 {% block header_text %}Here will be checkout page one day{% endblock %}
+{% block body %}
+    <button onclick="location.href='{% url "store:home" %}'"
+            type="button" class="btn btn-primary mx-2">
+        continue shopping
+    </button>
+{% endblock %}

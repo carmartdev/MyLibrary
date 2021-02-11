@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from time import sleep, time
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 from store.models import Book
 
 def wait_for(fn, timeout=5):
@@ -104,6 +105,15 @@ def buyer_can_see_book_in_her_cart(context, title):
         wait_for(lambda: context.browser.find_element_by_xpath(path))
     except NoSuchElementException:
         context.test.fail(f"Buyer can't see book {title} in her cart")
+
+@when("she changes quantity for '{title:w}' to '{qty:n}'")
+def change_book_qty(context, title, qty):
+    path = f"//td[contains(text(), '{title}')]/following::input"
+    qty_input = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    qty_input.send_keys(Keys.CONTROL, 'a')
+    qty_input.send_keys(Keys.DELETE)
+    qty_input.send_keys(qty)
+    wait_for(lambda: context.browser.find_element_by_name("update")).click()
 
 @when("Betty deletes from cart book '{title}'")
 def delete_book_from_cart(context, title):
