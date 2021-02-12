@@ -82,7 +82,7 @@ def add_book_again(context, title):
 
 @when("Betty clicks '{caption}' button")
 def click_button(context, caption):
-    path = f"//button[contains(text(), '{caption}')]"
+    path = f"//a[contains(text(), '{caption}')]"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @then("she is redirected to home page")

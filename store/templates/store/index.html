@@ -10,44 +10,41 @@
         {% endif %}
     </a>
     {% if books %}
-        <form action="add" method="POST">
-            {% csrf_token %}
-            <table id="id_book_catalog" class="table table-borderless table-striped">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Price</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for book in books %}
-                    <tr class="align-middle">
-                        <td>{{ book.title }}</td>
-                        <td>by {{ book.author }}</td>
-                        <td>${{ book.price }}</td>
-                        <td>
-                            {% if book.pk|stringformat:"i" in request.session.cart %}
-                            <button name="id"
-                                    class="text-uppercase fw-bold btn btn-secondary"
-                                    type="button"
-                                    onclick="location.href='{% url "store:cart" %}'">
+        <table id="id_book_catalog" class="table table-borderless table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr class="align-middle">
+                    <td>{{ book.title }}</td>
+                    <td>by {{ book.author }}</td>
+                    <td>${{ book.price }}</td>
+                    <td>
+                        {% if book.pk|stringformat:"i" in request.session.cart %}
+                        <form action="{% url 'store:cart' %}">
+                            <button class="text-uppercase fw-bold btn btn-secondary">
                                 in cart
                             </button>
-                            {% else %}
-                            <button name="id"
-                                    class="text-uppercase fw-bold btn btn-outline-secondary"
-                                    value="{{ book.id }}">
+                        </form>
+                        {% else %}
+                        <form action="{% url 'store:add' book.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="text-uppercase fw-bold btn btn-outline-secondary">
                                 add to cart
                             </button>
-                            {% endif %}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </form>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% else %}
         <p>No books are available.</p>
     {% endif %}

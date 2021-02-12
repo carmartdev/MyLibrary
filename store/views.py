@@ -1,6 +1,7 @@
 import re
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
+from django.views.decorators.http import require_POST
 from store.models import Book
 
 class HomePage(generic.ListView):
@@ -8,12 +9,14 @@ class HomePage(generic.ListView):
     context_object_name = "books"
     template_name = "store/index.html"
 
+@require_POST
 def delete_from_cart(request, item_id):
     cart = request.session.get("cart", {})
     cart.pop(item_id)
     request.session["cart"] = cart
     return redirect("store:cart")
 
+@require_POST
 def update_cart(request):
     def extract_index(item_id):
         return int(re.findall(r'\d+', item_id)[0])
@@ -26,8 +29,9 @@ def update_cart(request):
     request.session["cart"] = cart
     return redirect("store:cart")
 
-def add_to_cart(request):
-    book = get_object_or_404(Book, pk=request.POST.get("id"))
+@require_POST
+def add_to_cart(request, item_id):
+    book = get_object_or_404(Book, pk=item_id)
     cart = request.session.get("cart", {})
     cart[book.pk] = 1
     request.session["cart"] = cart
