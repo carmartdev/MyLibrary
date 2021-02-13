@@ -21,14 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3g0*s33l(p=n)n6#cw58s#^&#crd_5jj9%@j-d*qdk_1v%r+p5'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = [
-    "localhost",
-]
+if "BOOKSTORE_DEBUG_FALSE" in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ["BOOKSTORE_SECRET_KEY"]
+    ALLOWED_HOSTS = [os.environ["SITENAME"]]
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+else:
+    DEBUG = True
+    SECRET_KEY = "3g0*s33l(p=n)n6#cw58s#^&#crd_5jj9%@j-d*qdk_1v%r+p5"
+    ALLOWED_HOSTS = []
 
 
 # Application definition
