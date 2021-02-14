@@ -1,5 +1,5 @@
 SOURCES = $(wildcard *.py) $(wildcard */*.py)
-INTERPRETER = python3
+INTERPRETER = python
 
 runserver:
 	$(INTERPRETER) manage.py runserver
@@ -17,7 +17,7 @@ tags:
 
 include_tags:
 	ctags -f include_tags -R --languages=python --fields=+iaS --extras=+q \
-		/usr/lib/python3.7/
+		/usr/lib/python3.8/
 
 clean:
 	rm -rf tags include_tags __pycache__ */__pycache__ */*/__pycache__ \
