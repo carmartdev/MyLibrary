@@ -23,7 +23,7 @@
                     <tr class="align-middle">
                         <td>{{ forloop.counter }}.</td>
                         <td>{{ item.title }}</td>
-                        <td>by {{ item.author }}</td>
+                        <td>by {{ item.authors.all|join:", " }}</td>
                         <td>${{ item.price }}</td>
                         <td>
                             <input type="number"

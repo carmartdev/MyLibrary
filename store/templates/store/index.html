@@ -23,17 +23,17 @@
                 {% for book in books %}
                 <tr class="align-middle">
                     <td>{{ book.title }}</td>
-                    <td>by {{ book.author }}</td>
+                    <td>by {{ book.authors.all|join:", " }}</td>
                     <td>${{ book.price }}</td>
                     <td>
-                        {% if book.pk|stringformat:"i" in request.session.cart %}
+                        {% if book.pk in request.session.cart %}
                         <form action="{% url 'store:cart' %}">
                             <button class="text-uppercase fw-bold btn btn-secondary">
                                 in cart
                             </button>
                         </form>
                         {% else %}
-                        <form action="{% url 'store:add' book.id %}" method="POST">
+                        <form action="{% url 'store:add' book.pk %}" method="POST">
                             {% csrf_token %}
                             <button class="text-uppercase fw-bold btn btn-outline-secondary">
                                 add to cart

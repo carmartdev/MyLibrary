@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import random
+from string import ascii_letters
 from time import sleep, time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
-from store.models import Book
+from store.models import Author, Book
 
 def wait_for(fn, timeout=5):
     stime = time()
@@ -17,8 +19,15 @@ def wait_for(fn, timeout=5):
 
 @given("a set of books is available for sale")
 def fill_test_database(context):
-    for b in context.table:
-        Book(title=b["title"], author=b["author"], price=b["price"]).save()
+    def random_key(size):
+        return "".join(random.choice(ascii_letters) for _ in range(size))
+
+    for i, b in enumerate(context.table):
+        author = Author(name=b["author"], key=random_key(6))
+        author.save()
+        book = Book(title=b["title"], price=b["price"], key=random_key(6))
+        book.save()
+        book.authors.add(author)
 
 @given("new browser session is started")
 def clear_cookies(context):
