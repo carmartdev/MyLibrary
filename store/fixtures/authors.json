@@ -1,0 +1,4090 @@
+[
+    {
+        "model": "store.author",
+        "pk": "OL2670795A",
+        "fields": {
+            "name": "Barbara Liskov"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429609A",
+        "fields": {
+            "name": "K. M. Grant"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL446831A",
+        "fields": {
+            "name": "Paul Wexler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL576000A",
+        "fields": {
+            "name": "Janeen R. Adil"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL710598A",
+        "fields": {
+            "name": "Susan Patron"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL888706A",
+        "fields": {
+            "name": "Felix Salten"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1126946A",
+        "fields": {
+            "name": "Maria Matthews"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427461A",
+        "fields": {
+            "name": "D. Dina Friedman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431552A",
+        "fields": {
+            "name": "Sharon Jeffers"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL449577A",
+        "fields": {
+            "name": "Regis Philbin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428931A",
+        "fields": {
+            "name": "Sharelle Byars Moranville"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL379086A",
+        "fields": {
+            "name": "Othman Wok"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL946958A",
+        "fields": {
+            "name": "Vereen M. Bell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1168858A",
+        "fields": {
+            "name": "James Thomas"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428101A",
+        "fields": {
+            "name": "St. Clair, Jennifer."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL546414A",
+        "fields": {
+            "name": "Sis Boulos Deans"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1128170A",
+        "fields": {
+            "name": "Jeffrey P. Bonner"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390423A",
+        "fields": {
+            "name": "Stephanie Perry Moore"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1763487A",
+        "fields": {
+            "name": "Michael De Angelo"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL388206A",
+        "fields": {
+            "name": "Davida Hurwin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1422050A",
+        "fields": {
+            "name": "Alvin Robert Cunningham"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL388756A",
+        "fields": {
+            "name": "Jamie Gilson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389190A",
+        "fields": {
+            "name": "Brian Sloan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL472845A",
+        "fields": {
+            "name": "Raymond Radiguet"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1400696A",
+        "fields": {
+            "name": "David B. Posen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425774A",
+        "fields": {
+            "name": "Michael Patella"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL443693A",
+        "fields": {
+            "name": "Robert Pateman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394716A",
+        "fields": {
+            "name": "Catherine MacPhail"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426550A",
+        "fields": {
+            "name": "Gioia Woods"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429915A",
+        "fields": {
+            "name": "Rene\u0301e C. Rebman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1002869A",
+        "fields": {
+            "name": "Lisa M. Fine"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391600A",
+        "fields": {
+            "name": "Herve\u0301 Jubert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1401428A",
+        "fields": {
+            "name": "Evelyn Raab"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425790A",
+        "fields": {
+            "name": "Laura Anne Gilman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428810A",
+        "fields": {
+            "name": "Simon Puttock"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428002A",
+        "fields": {
+            "name": "Amanda Ellery"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL455284A",
+        "fields": {
+            "name": "Mark Royden Winchell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL890709A",
+        "fields": {
+            "name": "Mark D. Meyerson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1913593A",
+        "fields": {
+            "name": "Schwartz, Julius"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL398095A",
+        "fields": {
+            "name": "Marjorie Dennis Murray"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL56819A",
+        "fields": {
+            "name": "Vallverd\u00fa, Josep"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391327A",
+        "fields": {
+            "name": "Jarvis, Robin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427419A",
+        "fields": {
+            "name": "Terri Sievert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389095A",
+        "fields": {
+            "name": "Nathan Olson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1424752A",
+        "fields": {
+            "name": "Ellen Schreiber"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429849A",
+        "fields": {
+            "name": "Sean Callahan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL20680A",
+        "fields": {
+            "name": "Margaret Truman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL447341A",
+        "fields": {
+            "name": "Michael Spooner"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL462380A",
+        "fields": {
+            "name": "Margaret Hillert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL758630A",
+        "fields": {
+            "name": "Betty Mahmoody"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL812286A",
+        "fields": {
+            "name": "Luc Besson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1028871A",
+        "fields": {
+            "name": "Franc\u0327ois Place"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1385992A",
+        "fields": {
+            "name": "Caroline Anderson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428479A",
+        "fields": {
+            "name": "June Preszler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2711150A",
+        "fields": {
+            "name": "Mary H. Schaub"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429220A",
+        "fields": {
+            "name": "Michele Dominguez Greene"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388247A",
+        "fields": {
+            "name": "Mary Cronk Farrell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2997404A",
+        "fields": {
+            "name": "Darren James Bighetty"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL538570A",
+        "fields": {
+            "name": "Brad Barkley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393873A",
+        "fields": {
+            "name": "J. Minter"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2671037A",
+        "fields": {
+            "name": "Craig F. Smith"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL542064A",
+        "fields": {
+            "name": "Carol Dines"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387716A",
+        "fields": {
+            "name": "Erik E. Esckilsen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2892976A",
+        "fields": {
+            "name": "National Museum of the American Indian (U. S.)"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL403735A",
+        "fields": {
+            "name": "Laurie Keller"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL530990A",
+        "fields": {
+            "name": "Kelly Milner Halls"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL449094A",
+        "fields": {
+            "name": "Marty Rhodes Figley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428391A",
+        "fields": {
+            "name": "Cynthia L. Copeland"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425256A",
+        "fields": {
+            "name": "Michael J. Ortiz"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2846551A",
+        "fields": {
+            "name": "Dr. Brian L. Speer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2869686A",
+        "fields": {
+            "name": "John Mendelson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388376A",
+        "fields": {
+            "name": "Karma Wilson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2703437A",
+        "fields": {
+            "name": "Ann M. Martin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2830434A",
+        "fields": {
+            "name": "Dennis Low"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1385943A",
+        "fields": {
+            "name": "Rhonda Nelson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431884A",
+        "fields": {
+            "name": "Delphine Perret"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2711149A",
+        "fields": {
+            "name": "Lyn McConchie"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428254A",
+        "fields": {
+            "name": "David Jacobson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390738A",
+        "fields": {
+            "name": "Laura Elliott"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1422009A",
+        "fields": {
+            "name": "Fiona Gibson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425171A",
+        "fields": {
+            "name": "Sheila Sustrin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429683A",
+        "fields": {
+            "name": "U-gyo\u0306ng Kim"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2670891A",
+        "fields": {
+            "name": "H. Peter Alesso"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3623515A",
+        "fields": {
+            "name": "Kamuti Kiteme"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393568A",
+        "fields": {
+            "name": "Randall Wright"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426558A",
+        "fields": {
+            "name": "Hadley Higginson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432313A",
+        "fields": {
+            "name": "Mary M. Bauer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432829A",
+        "fields": {
+            "name": "Shelly Becker"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL24708A",
+        "fields": {
+            "name": "A. E. van Vogt"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3586966A",
+        "fields": {
+            "name": "Shigeru Takeuchi"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL956419A",
+        "fields": {
+            "name": "James Duncan Lawrence"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425596A",
+        "fields": {
+            "name": "Natalie Quintart"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430345A",
+        "fields": {
+            "name": "Tony Norman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426992A",
+        "fields": {
+            "name": "Janet Squires"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388623A",
+        "fields": {
+            "name": "Jim Corrigan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427290A",
+        "fields": {
+            "name": "Lisa Brown"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL399452A",
+        "fields": {
+            "name": "Bonnie Bowman Thurston"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL388162A",
+        "fields": {
+            "name": "Ernest Metzger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390199A",
+        "fields": {
+            "name": "Julie Hearn"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL579659A",
+        "fields": {
+            "name": "Diane Namm"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL584377A",
+        "fields": {
+            "name": "Charlotte Joko Beck"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427024A",
+        "fields": {
+            "name": "Shando Varda"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431391A",
+        "fields": {
+            "name": "Dominique Paul"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431751A",
+        "fields": {
+            "name": "Judith Ellen Lee"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391138A",
+        "fields": {
+            "name": "Thierry Robberecht"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430655A",
+        "fields": {
+            "name": "Stephen Cook"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432213A",
+        "fields": {
+            "name": "Christopher Peter Grey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427144A",
+        "fields": {
+            "name": "Rob Scotton"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431154A",
+        "fields": {
+            "name": "Steven A. Rigolosi"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL4790472A",
+        "fields": {
+            "name": "Richard Chase"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1013931A",
+        "fields": {
+            "name": "Marilyn Hickey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2871740A",
+        "fields": {
+            "name": "R. Allen Smith"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3399908A",
+        "fields": {
+            "name": "Maria S. Ellsworth"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1028672A",
+        "fields": {
+            "name": "Joachim Fest"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1049768A",
+        "fields": {
+            "name": "Guido van Genechten"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1190435A",
+        "fields": {
+            "name": "Billy Crystal"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1460185A",
+        "fields": {
+            "name": "John P. Stewart"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2850743A",
+        "fields": {
+            "name": "Kathy B. Cheek"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL31126A",
+        "fields": {
+            "name": "Lynne Reid Banks"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL398878A",
+        "fields": {
+            "name": "Ellen Feldman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389099A",
+        "fields": {
+            "name": "Terry Allan Hicks"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427995A",
+        "fields": {
+            "name": "Terri DeGezelle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1433179A",
+        "fields": {
+            "name": "Leah Kramer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL627385A",
+        "fields": {
+            "name": "Jessica Anderson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1392844A",
+        "fields": {
+            "name": "Patricia Sawyer Ashton"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1424800A",
+        "fields": {
+            "name": "Todd Michael"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL5797335A",
+        "fields": {
+            "name": "Montgomery, L. M. (Lucy Maud), 1874-1942"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL239407A",
+        "fields": {
+            "name": "Tracy Barrett"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3405332A",
+        "fields": {
+            "name": "Jun Yamauchi"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427425A",
+        "fields": {
+            "name": "Travis Griffith"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430072A",
+        "fields": {
+            "name": "Vita Jime\u0301nez"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432373A",
+        "fields": {
+            "name": "Eric R. Jacobs"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2954922A",
+        "fields": {
+            "name": "Ghil'ad Zuckermann"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388950A",
+        "fields": {
+            "name": "Derek Jackson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1010609A",
+        "fields": {
+            "name": "M. Dennis Hamm"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427140A",
+        "fields": {
+            "name": "Victoria Kann"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1424700A",
+        "fields": {
+            "name": "Dianne Crabtree"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430730A",
+        "fields": {
+            "name": "Laura Williams McCaffrey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431049A",
+        "fields": {
+            "name": "Simmons, Michael"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL22586A",
+        "fields": {
+            "name": "Mary Higgins Clark"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428791A",
+        "fields": {
+            "name": "Sanja Res\u030cc\u030cek"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL387775A",
+        "fields": {
+            "name": "John M. Lannon"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL764769A",
+        "fields": {
+            "name": "Stephen A. McKnight"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388843A",
+        "fields": {
+            "name": "Margaret McNamara"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL447564A",
+        "fields": {
+            "name": "Virginia Driving Hawk Sneve"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390557A",
+        "fields": {
+            "name": "Jon Berkeley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL946967A",
+        "fields": {
+            "name": "Brian W. Kernighan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425056A",
+        "fields": {
+            "name": "Andria Warmflash Rosenbaum"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425834A",
+        "fields": {
+            "name": "Marilyn Duncan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427454A",
+        "fields": {
+            "name": "Elena Martin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1478003A",
+        "fields": {
+            "name": "Katharina Volk"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393176A",
+        "fields": {
+            "name": "Karen E. Quinones Miller"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL454842A",
+        "fields": {
+            "name": "Pavel Markovich Dolukhanov"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1189680A",
+        "fields": {
+            "name": "Mary-Ellen Lang Collura"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390859A",
+        "fields": {
+            "name": "Ann Rand"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393876A",
+        "fields": {
+            "name": "Tyne O'Connell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428930A",
+        "fields": {
+            "name": "James Cross Giblin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6591101A",
+        "fields": {
+            "name": "Roberto Santiba\u00f1ez"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2916402A",
+        "fields": {
+            "name": "Brian Tyler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL39385A",
+        "fields": {
+            "name": "Lev Raphael"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL545302A",
+        "fields": {
+            "name": "H. Wayne House"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL604186A",
+        "fields": {
+            "name": "Jacqueline Hanks"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390021A",
+        "fields": {
+            "name": "Liz Pichon"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425003A",
+        "fields": {
+            "name": "Martha Peaslee Levine"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL655944A",
+        "fields": {
+            "name": "Norma Thompson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1960669A",
+        "fields": {
+            "name": "Timothy Hallinan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389485A",
+        "fields": {
+            "name": "Scott R. Welvaert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427545A",
+        "fields": {
+            "name": "Marlee Matlin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3218239A",
+        "fields": {
+            "name": "Charles S Weinblatt"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391940A",
+        "fields": {
+            "name": "Hicks, Betty."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL437901A",
+        "fields": {
+            "name": "Francis Conte"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL537450A",
+        "fields": {
+            "name": "Shirley Mozelle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2992468A",
+        "fields": {
+            "name": "Glynis , D. Wallace "
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6349017A",
+        "fields": {
+            "name": "Jim Lewis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1386483A",
+        "fields": {
+            "name": "Robin T. Popp"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387844A",
+        "fields": {
+            "name": "J. T. Petty"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431592A",
+        "fields": {
+            "name": "Marilyn Bishop Shaw"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL765927A",
+        "fields": {
+            "name": "Allen Kurzweil"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1081242A",
+        "fields": {
+            "name": "Hess, Karl"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1087055A",
+        "fields": {
+            "name": "Wirt, Mildred A."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1868456A",
+        "fields": {
+            "name": "Katherine Mattock"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL508013A",
+        "fields": {
+            "name": "Brent Hartinger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425362A",
+        "fields": {
+            "name": "Ellen Olson-Brown"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427988A",
+        "fields": {
+            "name": "Henry C. Krasnow"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430513A",
+        "fields": {
+            "name": "Martha Kneib"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430759A",
+        "fields": {
+            "name": "R. J. Lyall"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431060A",
+        "fields": {
+            "name": "Barb Bentler Ullman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2379978A",
+        "fields": {
+            "name": "Alexander Murray"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL398565A",
+        "fields": {
+            "name": "M. Susan Power"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428267A",
+        "fields": {
+            "name": "Rebecca Fjelland Davis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1609202A",
+        "fields": {
+            "name": "Susan Curtis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL833191A",
+        "fields": {
+            "name": "Don Talafous"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL596981A",
+        "fields": {
+            "name": "Tabor Evans"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1010851A",
+        "fields": {
+            "name": "Ralph Frasca"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429785A",
+        "fields": {
+            "name": "Betsy R. Rosenthal"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1398129A",
+        "fields": {
+            "name": "Kelli Chipponeri"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389450A",
+        "fields": {
+            "name": "Matt Doeden"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL402296A",
+        "fields": {
+            "name": "Julie Tilsner"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL445006A",
+        "fields": {
+            "name": "Taro\u0304 Gomi"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432539A",
+        "fields": {
+            "name": "Sharon Lamson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427800A",
+        "fields": {
+            "name": "Charlie Price"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL409336A",
+        "fields": {
+            "name": "Doug Peterson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL772137A",
+        "fields": {
+            "name": "J. Fred MacDonald"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391661A",
+        "fields": {
+            "name": "Ryan Jacobson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2764253A",
+        "fields": {
+            "name": "Particia Crone"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL528902A",
+        "fields": {
+            "name": "D. C. B. Lieven"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL835969A",
+        "fields": {
+            "name": "Jean Langerman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2922957A",
+        "fields": {
+            "name": "Ivan Supicic"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388481A",
+        "fields": {
+            "name": "Patricia J. Murphy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393593A",
+        "fields": {
+            "name": "Ellen Catala"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL437811A",
+        "fields": {
+            "name": "Emily Rodda"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426667A",
+        "fields": {
+            "name": "Trudy Ludwig"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432796A",
+        "fields": {
+            "name": "Cornelia Read"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL392179A",
+        "fields": {
+            "name": "Karen Berger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391085A",
+        "fields": {
+            "name": "Stephenie Meyer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432902A",
+        "fields": {
+            "name": "Dave Benbow"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427055A",
+        "fields": {
+            "name": "Kay Jackson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432057A",
+        "fields": {
+            "name": "Karl E. Lutze"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1191311A",
+        "fields": {
+            "name": "Fine, John V. A."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425597A",
+        "fields": {
+            "name": "Ella Burfoot"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431602A",
+        "fields": {
+            "name": "Sam Lloyd"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL5803210A",
+        "fields": {
+            "name": "Ian H. S. Cullimore"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL771283A",
+        "fields": {
+            "name": "Greg Mogenson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427711A",
+        "fields": {
+            "name": "Susan Ashe"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428141A",
+        "fields": {
+            "name": "Marie Evans Bouclin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428255A",
+        "fields": {
+            "name": "Brown, Richard"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL32981A",
+        "fields": {
+            "name": "Joyce Carol Oates"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL530406A",
+        "fields": {
+            "name": "Cristina Ortega"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL711276A",
+        "fields": {
+            "name": "Augustine Roberts"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL544051A",
+        "fields": {
+            "name": "Nan Gregory"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428006A",
+        "fields": {
+            "name": "Debra Mandel"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2954269A",
+        "fields": {
+            "name": "Ana Monnar"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL447027A",
+        "fields": {
+            "name": "Gil Nelson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427224A",
+        "fields": {
+            "name": "Keane, David"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430578A",
+        "fields": {
+            "name": "Carol Nevius"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431414A",
+        "fields": {
+            "name": "Anne Renaud"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431766A",
+        "fields": {
+            "name": "H.  A. Baker"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL27951A",
+        "fields": {
+            "name": "Andre Norton"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL773242A",
+        "fields": {
+            "name": "Durga Bernhard"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL951050A",
+        "fields": {
+            "name": "Williams, Susan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388945A",
+        "fields": {
+            "name": "Justin Richards"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431153A",
+        "fields": {
+            "name": "Liz Craft"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431610A",
+        "fields": {
+            "name": "Gill Harvey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL433234A",
+        "fields": {
+            "name": "Terry Deary"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6599032A",
+        "fields": {
+            "name": "Edited By : STACEY B. DAY"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1311238A",
+        "fields": {
+            "name": "Nova Scotia Museum."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427008A",
+        "fields": {
+            "name": "Greg Trine"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL22945A",
+        "fields": {
+            "name": "Gloria Whelan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL408487A",
+        "fields": {
+            "name": "Morton, John"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL544636A",
+        "fields": {
+            "name": "Janet Holm McHenry"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390085A",
+        "fields": {
+            "name": "Elivia Savadier"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3724318A",
+        "fields": {
+            "name": "Ned and Jody Martin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388838A",
+        "fields": {
+            "name": "Michelle Paver"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394989A",
+        "fields": {
+            "name": "Shannon Hale"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391703A",
+        "fields": {
+            "name": "Carrie A. Braulick"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL237227A",
+        "fields": {
+            "name": "Donald J. Sobol"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL388132A",
+        "fields": {
+            "name": "Dan Elish"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL892147A",
+        "fields": {
+            "name": "Burchell, Mary"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432346A",
+        "fields": {
+            "name": "Kristy Orona-Ramirez"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427273A",
+        "fields": {
+            "name": "John Ziff"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428178A",
+        "fields": {
+            "name": "Robert Wurzberg"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430654A",
+        "fields": {
+            "name": "Corey Rosen Schwartz"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2748237A",
+        "fields": {
+            "name": "Robert riger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430464A",
+        "fields": {
+            "name": "Thomas E. Schneider"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2850744A",
+        "fields": {
+            "name": "Thomas J. Metallo"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3082823A",
+        "fields": {
+            "name": "Matt Telles"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390831A",
+        "fields": {
+            "name": "Caroline Lawrence"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428190A",
+        "fields": {
+            "name": "Pascale Constantine"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3405333A",
+        "fields": {
+            "name": "Hitoshi Ohta"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1396027A",
+        "fields": {
+            "name": "Jonny Zucker"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL575592A",
+        "fields": {
+            "name": "Patrick J. Keane"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6474425A",
+        "fields": {
+            "name": "Tui Sutherland"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426792A",
+        "fields": {
+            "name": "Pam Smallcomb"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428909A",
+        "fields": {
+            "name": "Megan Schoeneberger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3404897A",
+        "fields": {
+            "name": "Jari Juhani Ylinen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL460493A",
+        "fields": {
+            "name": "Alan Snow"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2677828A",
+        "fields": {
+            "name": "Elizabeth Joy Arnold"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL403295A",
+        "fields": {
+            "name": "Amy Nathan"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388153A",
+        "fields": {
+            "name": "Hall, Margaret"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393500A",
+        "fields": {
+            "name": "Lene Kaaberbol"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427426A",
+        "fields": {
+            "name": "Heidi Cole"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428650A",
+        "fields": {
+            "name": "Frances Hardinge"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1433178A",
+        "fields": {
+            "name": "Sharon McKenna"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1296800A",
+        "fields": {
+            "name": "Dorothy Meserve Kunhardt"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389160A",
+        "fields": {
+            "name": "Erika L. Shores"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL19905A",
+        "fields": {
+            "name": "Piers Anthony"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394277A",
+        "fields": {
+            "name": "Chris D'Lacey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430582A",
+        "fields": {
+            "name": "Ben Klemens"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL197120A",
+        "fields": {
+            "name": "Wilder, Laura Ingalls"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL531581A",
+        "fields": {
+            "name": "Angie Sage"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL891A",
+        "fields": {
+            "name": "Mohandas Karamchand Gandhi"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394510A",
+        "fields": {
+            "name": "David Orme"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL28641A",
+        "fields": {
+            "name": "Robert A. Heinlein"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3035479A",
+        "fields": {
+            "name": "Michael Cavendish"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL407348A",
+        "fields": {
+            "name": "Gina Spadafori"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1397475A",
+        "fields": {
+            "name": "John Kovach"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431690A",
+        "fields": {
+            "name": "Tiki Barber"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432970A",
+        "fields": {
+            "name": "Valerie Wilding"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1782886A",
+        "fields": {
+            "name": "Michael Cook"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL22132A",
+        "fields": {
+            "name": "Beverly Cleary"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL392595A",
+        "fields": {
+            "name": "Donald X. Burt"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL545900A",
+        "fields": {
+            "name": "A. M. Jenkins"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393342A",
+        "fields": {
+            "name": "Yelena Romanova"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3086602A",
+        "fields": {
+            "name": "Marlene Divina"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL761501A",
+        "fields": {
+            "name": "Laura Lee Hope"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393882A",
+        "fields": {
+            "name": "Adrian Johnson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425134A",
+        "fields": {
+            "name": "Lizette Larson-Miller"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432827A",
+        "fields": {
+            "name": "Hugo Martin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388208A",
+        "fields": {
+            "name": "Kathryn Adams Doty"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388486A",
+        "fields": {
+            "name": "Gordon, David"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390524A",
+        "fields": {
+            "name": "Julie Merberg"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL29881A",
+        "fields": {
+            "name": "A. A. Milne"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425578A",
+        "fields": {
+            "name": "Ruth Galloway"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426755A",
+        "fields": {
+            "name": "Karen Swensen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL765409A",
+        "fields": {
+            "name": "D. J. MacHale"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387638A",
+        "fields": {
+            "name": "Cindy Kenney"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394882A",
+        "fields": {
+            "name": "Diane Les Becquets"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL443047A",
+        "fields": {
+            "name": "Debora Pearson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL457635A",
+        "fields": {
+            "name": "Khenpo Karthar Rinpoche"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425637A",
+        "fields": {
+            "name": "Brian Tacang"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL443691A",
+        "fields": {
+            "name": "Sakina Kagda"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL713112A",
+        "fields": {
+            "name": "Katharine Kenah"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432975A",
+        "fields": {
+            "name": "Lynne Rickards"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390073A",
+        "fields": {
+            "name": "Dawn Fitzgerald"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425991A",
+        "fields": {
+            "name": "David Yamane"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL23891A",
+        "fields": {
+            "name": "Francesca Lia Block"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL455673A",
+        "fields": {
+            "name": "William D. Pease"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL53557A",
+        "fields": {
+            "name": "Peter Brock"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1391477A",
+        "fields": {
+            "name": "Thomson, John"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427950A",
+        "fields": {
+            "name": "Ranulfo"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL528134A",
+        "fields": {
+            "name": "Margaret Jean Anderson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389208A",
+        "fields": {
+            "name": "William John Ripple"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL216166A",
+        "fields": {
+            "name": "Philip Ardagh"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1492589A",
+        "fields": {
+            "name": "Marion Verhaalen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1764192A",
+        "fields": {
+            "name": "Grace Allen Hogarth"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL458532A",
+        "fields": {
+            "name": "Sophie D. Coe"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425469A",
+        "fields": {
+            "name": "Richard M. Strum"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL450977A",
+        "fields": {
+            "name": "Ginger Foglesong Guy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL774732A",
+        "fields": {
+            "name": "Robert Phillip Stoker"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1424587A",
+        "fields": {
+            "name": "Sutherland, David"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL770833A",
+        "fields": {
+            "name": "Peter Jeffery"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428548A",
+        "fields": {
+            "name": "Ann Jaramillo"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428706A",
+        "fields": {
+            "name": "Martha E. H. Rustad"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431717A",
+        "fields": {
+            "name": "V. A. Richardson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427702A",
+        "fields": {
+            "name": "Melody Herr"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429784A",
+        "fields": {
+            "name": "Lydia Prince"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL453297A",
+        "fields": {
+            "name": "Annette J. Bruce"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427958A",
+        "fields": {
+            "name": "Gillian Shields"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432056A",
+        "fields": {
+            "name": "Charles E. Coulter"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL28188A",
+        "fields": {
+            "name": "Madeleine L'Engle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL5492898A",
+        "fields": {
+            "name": "Maureen B. Adams"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390334A",
+        "fields": {
+            "name": "Elise Broach"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2670453A",
+        "fields": {
+            "name": "Martin Casdagli"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2670628A",
+        "fields": {
+            "name": "Rob Pike"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL216417A",
+        "fields": {
+            "name": "Stewart, Mark"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL594128A",
+        "fields": {
+            "name": "Smith, D. J."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1144285A",
+        "fields": {
+            "name": "Jan Turbill"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390196A",
+        "fields": {
+            "name": "Ian Ogilvy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1512361A",
+        "fields": {
+            "name": "Charles W. Runyon"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427840A",
+        "fields": {
+            "name": "George O'Connor"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1090397A",
+        "fields": {
+            "name": "Bernd Badegruber"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1762847A",
+        "fields": {
+            "name": "Gary Michael Durst"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428047A",
+        "fields": {
+            "name": "George M. Elsey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429431A",
+        "fields": {
+            "name": "Mari C. Schuh"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431175A",
+        "fields": {
+            "name": "Peter M. Gardner"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431611A",
+        "fields": {
+            "name": "A. J. Lake"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2883547A",
+        "fields": {
+            "name": "J. T. Waldman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL774774A",
+        "fields": {
+            "name": "Malorie Blackman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3047808A",
+        "fields": {
+            "name": "Anne Ingram"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL717190A",
+        "fields": {
+            "name": "Etienne Delessert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL395412A",
+        "fields": {
+            "name": "Robert Lipsyte"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429534A",
+        "fields": {
+            "name": "Jody Sullivan Rake"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426602A",
+        "fields": {
+            "name": "Daniel Hoyer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3048756A",
+        "fields": {
+            "name": "Tom Smoot"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3393083A",
+        "fields": {
+            "name": "Robin Ryde"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432301A",
+        "fields": {
+            "name": "W. Stephen Belko"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL576531A",
+        "fields": {
+            "name": "Pamela D. Mayhall"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428655A",
+        "fields": {
+            "name": "Roberta Basel"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL393927A",
+        "fields": {
+            "name": "Vasant Lad"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL444838A",
+        "fields": {
+            "name": "Edwin Diamond"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL390053A",
+        "fields": {
+            "name": "Mordicai Gerstein"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL767194A",
+        "fields": {
+            "name": "Mary Carolyn Hollers George"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429781A",
+        "fields": {
+            "name": "Moira Rose Donohue"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2929986A",
+        "fields": {
+            "name": "J. Prenis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427712A",
+        "fields": {
+            "name": "Franzeska G. Ewart"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428256A",
+        "fields": {
+            "name": "Whitehead, Peter."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL888382A",
+        "fields": {
+            "name": "Susan Hendricks Swetnam"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1394527A",
+        "fields": {
+            "name": "Jill Wolfson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2644885A",
+        "fields": {
+            "name": "Brian Greene"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL456528A",
+        "fields": {
+            "name": "John Viele"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL656791A",
+        "fields": {
+            "name": "Sharifah Enayat Ali"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430283A",
+        "fields": {
+            "name": "Lincoln Konkle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL454762A",
+        "fields": {
+            "name": "Karen Cushman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL530824A",
+        "fields": {
+            "name": "Karen Beaumont"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL886692A",
+        "fields": {
+            "name": "John Dyson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393939A",
+        "fields": {
+            "name": "Ilona M. Bray"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1345243A",
+        "fields": {
+            "name": "Christopher Russell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429503A",
+        "fields": {
+            "name": "Kaja Whitehouse"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430343A",
+        "fields": {
+            "name": "Thom Satterlee"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6308221A",
+        "fields": {
+            "name": "Jim Thompson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389326A",
+        "fields": {
+            "name": "Cliff McNish"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426104A",
+        "fields": {
+            "name": "Diane Gibfried"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388434A",
+        "fields": {
+            "name": "Nora Raleigh Baskin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431718A",
+        "fields": {
+            "name": "Lisa McClatchy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL542993A",
+        "fields": {
+            "name": "Lisa M. Klein"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1007954A",
+        "fields": {
+            "name": "Francis Graham Wilson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6829203A",
+        "fields": {
+            "name": "Miryam"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL955723A",
+        "fields": {
+            "name": "Deborah M. Moss"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393570A",
+        "fields": {
+            "name": "Clare B. Dunkle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387769A",
+        "fields": {
+            "name": "Sarah L. Thomson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL4327652A",
+        "fields": {
+            "name": "Sylvia Plath"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1345041A",
+        "fields": {
+            "name": "Nancy Rica Schiff"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1603462A",
+        "fields": {
+            "name": "Alfred L. Brophy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3093100A",
+        "fields": {
+            "name": "Scot Courtney"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL404252A",
+        "fields": {
+            "name": "Samuels, Barbara."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL530762A",
+        "fields": {
+            "name": "Roxie Munro"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1398158A",
+        "fields": {
+            "name": "Young, Steve"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425029A",
+        "fields": {
+            "name": "Ryan Gattis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425847A",
+        "fields": {
+            "name": "Maureen F. McCabe"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL201890A",
+        "fields": {
+            "name": "James Raymond Fisher Jr."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL543332A",
+        "fields": {
+            "name": "Marion Morrison"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL766466A",
+        "fields": {
+            "name": "Ann Downer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425720A",
+        "fields": {
+            "name": "James Yang"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427245A",
+        "fields": {
+            "name": "Jennifer Thermes"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL528746A",
+        "fields": {
+            "name": "P. J. Heather"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387685A",
+        "fields": {
+            "name": "David Michael Slater"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388837A",
+        "fields": {
+            "name": "Michael P. Spradlin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425594A",
+        "fields": {
+            "name": "Layn Marlow"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428203A",
+        "fields": {
+            "name": "Carter, Catherine"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431450A",
+        "fields": {
+            "name": "Jerome Branche"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL436064A",
+        "fields": {
+            "name": "Marc Tyler Nobleman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1387972A",
+        "fields": {
+            "name": "O'Donnell, Liam"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1392956A",
+        "fields": {
+            "name": "Dianna Hutts Aston"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3872548A",
+        "fields": {
+            "name": "G. Larsson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL401409A",
+        "fields": {
+            "name": "James Sage"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL672636A",
+        "fields": {
+            "name": "Christine Fletcher"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426791A",
+        "fields": {
+            "name": "Paul Dowswell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3789463A",
+        "fields": {
+            "name": "Wendy Willett"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429561A",
+        "fields": {
+            "name": "Bryan Davis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426204A",
+        "fields": {
+            "name": "Phil Pringle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL982120A",
+        "fields": {
+            "name": "Catherine Nichols"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388493A",
+        "fields": {
+            "name": "Dorian Cirrone"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426926A",
+        "fields": {
+            "name": "Anita Bean"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL34221A",
+        "fields": {
+            "name": "Isaac Asimov"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1197209A",
+        "fields": {
+            "name": "Joyce Hart"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389987A",
+        "fields": {
+            "name": "Craig Frazier"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390191A",
+        "fields": {
+            "name": "Cole, Stephen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427750A",
+        "fields": {
+            "name": "Danny Wool"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428100A",
+        "fields": {
+            "name": "Bent Lorentzen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL451126A",
+        "fields": {
+            "name": "Arthur Geisert"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1393304A",
+        "fields": {
+            "name": "Steven J. Green"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428758A",
+        "fields": {
+            "name": "Kanako Usui"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL536295A",
+        "fields": {
+            "name": "Joan L. Nodset"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427899A",
+        "fields": {
+            "name": "Sarah Maass"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2888240A",
+        "fields": {
+            "name": "Geoff Apps"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428033A",
+        "fields": {
+            "name": "David A. Dulio"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL396009A",
+        "fields": {
+            "name": "Smith, Patrick D."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL774171A",
+        "fields": {
+            "name": "Searle, Mark"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426337A",
+        "fields": {
+            "name": "James F. Epperson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1477616A",
+        "fields": {
+            "name": "Hannah Crafts"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL446793A",
+        "fields": {
+            "name": "Margaret Willey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429475A",
+        "fields": {
+            "name": "Ann Redisch Stampler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3008304A",
+        "fields": {
+            "name": "Izzy Wryght"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1388892A",
+        "fields": {
+            "name": "Leo Landry"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428077A",
+        "fields": {
+            "name": "Lu Ann Bransby"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1763271A",
+        "fields": {
+            "name": "Burt Bacharach"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL412421A",
+        "fields": {
+            "name": "Marks, Graham."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL452739A",
+        "fields": {
+            "name": "Cheryl Savageau"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1390436A",
+        "fields": {
+            "name": "Mariah Fredericks"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3411506A",
+        "fields": {
+            "name": "Oscar Iv\u00e1n Maldonado"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL535512A",
+        "fields": {
+            "name": "Jane Manaster"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL803374A",
+        "fields": {
+            "name": "Martin Gojda"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL452131A",
+        "fields": {
+            "name": "Nan Leaptrott"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428595A",
+        "fields": {
+            "name": "Teva J. Scheer"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429783A",
+        "fields": {
+            "name": "Gloria Koster"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430972A",
+        "fields": {
+            "name": "Judson Roberts"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL383975A",
+        "fields": {
+            "name": "Beth Hensperger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL402595A",
+        "fields": {
+            "name": "John Hassett"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL461725A",
+        "fields": {
+            "name": "Lee Jackson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1435747A",
+        "fields": {
+            "name": "Susanna Leonard Hill"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427408A",
+        "fields": {
+            "name": "Catherine A. Cory"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430659A",
+        "fields": {
+            "name": "Theresa Howell"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430790A",
+        "fields": {
+            "name": "Louise Bonnett-Rampersaud"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1433108A",
+        "fields": {
+            "name": "Michelle Stimpson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL907694A",
+        "fields": {
+            "name": "Nijole Sadunaite"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427148A",
+        "fields": {
+            "name": "Mali\u0301n Alegri\u0301a"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428189A",
+        "fields": {
+            "name": "Yukiko Kido"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430661A",
+        "fields": {
+            "name": "Katharine Robey"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431716A",
+        "fields": {
+            "name": "Dennis Carr"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432678A",
+        "fields": {
+            "name": "Deanna Kizis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2646799A",
+        "fields": {
+            "name": "James Turner"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3161459A",
+        "fields": {
+            "name": "Chris Johnstone"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL889154A",
+        "fields": {
+            "name": "Sue Mayfield"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2944563A",
+        "fields": {
+            "name": "Immaculee Ilibagiza"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427493A",
+        "fields": {
+            "name": "Pamela Chase Hain"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL534469A",
+        "fields": {
+            "name": "Michael Kwatera"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425357A",
+        "fields": {
+            "name": "Rhea Perlman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL398859A",
+        "fields": {
+            "name": "Margaret Read MacDonald"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL658755A",
+        "fields": {
+            "name": "Michael A. Weinstein"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL745017A",
+        "fields": {
+            "name": "Rosanne Keller"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL839763A",
+        "fields": {
+            "name": "John Guttag"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1386222A",
+        "fields": {
+            "name": "Jan Freed"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1192277A",
+        "fields": {
+            "name": "John Caris"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428037A",
+        "fields": {
+            "name": "Philip Reeve"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430818A",
+        "fields": {
+            "name": "Steven J. Belluscio"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL428459A",
+        "fields": {
+            "name": "Margot Adler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3086601A",
+        "fields": {
+            "name": "Fernando Divina"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430889A",
+        "fields": {
+            "name": "Mary-Kyle Douglas"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1417269A",
+        "fields": {
+            "name": "Frank Crawley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427172A",
+        "fields": {
+            "name": "Carrie McDonnall"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428738A",
+        "fields": {
+            "name": "Brynn Olenberg Sugarman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431905A",
+        "fields": {
+            "name": "Alexander McCall  Smith"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL25712A",
+        "fields": {
+            "name": "Terry Pratchett"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428243A",
+        "fields": {
+            "name": "Alan K. Lewis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2850849A",
+        "fields": {
+            "name": "William Hurrell Mallock"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL460315A",
+        "fields": {
+            "name": "Ken Henderson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389637A",
+        "fields": {
+            "name": "Anne-Laure Bondoux"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425300A",
+        "fields": {
+            "name": "Tucker Shaw"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL389357A",
+        "fields": {
+            "name": "Barthe DeClements"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL402919A",
+        "fields": {
+            "name": "Julieta Ramos-Elorduy"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1234081A",
+        "fields": {
+            "name": "Martha Tolles"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427713A",
+        "fields": {
+            "name": "Richard Moverley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432828A",
+        "fields": {
+            "name": "Pep Montserrat"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2711818A",
+        "fields": {
+            "name": "Glenn Andrews"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL951666A",
+        "fields": {
+            "name": "Jean-Marie Howe"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431885A",
+        "fields": {
+            "name": "Alissa Heyman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3062986A",
+        "fields": {
+            "name": "Dain Schult"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427577A",
+        "fields": {
+            "name": "Mark Tredinnick"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL407175A",
+        "fields": {
+            "name": "Peter Huggins"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1399426A",
+        "fields": {
+            "name": "Shelley Bates"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429411A",
+        "fields": {
+            "name": "Jessica Redmond"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431713A",
+        "fields": {
+            "name": "Kirsten Miller"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2712213A",
+        "fields": {
+            "name": "Anne McCaffrey; Elizabeth Scarborough"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2887746A",
+        "fields": {
+            "name": "OS Hillman"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428156A",
+        "fields": {
+            "name": "Bill H. Doyle"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1239973A",
+        "fields": {
+            "name": "M. Eulalia Valeri"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1347736A",
+        "fields": {
+            "name": "Ronald Hunter"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389396A",
+        "fields": {
+            "name": "Sarah L. Schuette"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428266A",
+        "fields": {
+            "name": "Thomas K. Adamson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL814845A",
+        "fields": {
+            "name": "Zdene\u030ck Va\u0301n\u030ca"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1016009A",
+        "fields": {
+            "name": "Philip Gosse"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425788A",
+        "fields": {
+            "name": "Pauline Chandler"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429339A",
+        "fields": {
+            "name": "Laura Ruby"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3620105A",
+        "fields": {
+            "name": "Yana Mintoff Bland"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1347386A",
+        "fields": {
+            "name": "James Aucoin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427420A",
+        "fields": {
+            "name": "Amanda Doering"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1428450A",
+        "fields": {
+            "name": "Jill Esbaum"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL459700A",
+        "fields": {
+            "name": "True Kelley"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425816A",
+        "fields": {
+            "name": "Paul H. Carlson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3008907A",
+        "fields": {
+            "name": "ferf ziamond"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3400235A",
+        "fields": {
+            "name": "Jose Maria Neves"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL892458A",
+        "fields": {
+            "name": "Karen Karbo"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1483091A",
+        "fields": {
+            "name": "Emily Sollinger"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL6590132A",
+        "fields": {
+            "name": "Greg Atkinson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3405331A",
+        "fields": {
+            "name": "Asako Kawamori"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL396804A",
+        "fields": {
+            "name": "Nancy Price Graff"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430402A",
+        "fields": {
+            "name": "Nick Would"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2660370A",
+        "fields": {
+            "name": "Junot Diaz"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1232623A",
+        "fields": {
+            "name": "A. C. Crispin"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427289A",
+        "fields": {
+            "name": "Anne Davis"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2975109A",
+        "fields": {
+            "name": "Jean Heinbuch"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1389337A",
+        "fields": {
+            "name": "Lisi Harrison"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426014A",
+        "fields": {
+            "name": "Karen E. Olson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426685A",
+        "fields": {
+            "name": "Rainy Dohaney"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431054A",
+        "fields": {
+            "name": "Deborah Lynn Jacobs"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL2850742A",
+        "fields": {
+            "name": "H. Lee Cheek Jr."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430470A",
+        "fields": {
+            "name": "Trina Boice"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL526319A",
+        "fields": {
+            "name": "Ken\u02bcichi Kanatani"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL720711A",
+        "fields": {
+            "name": "Thomas Barker"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427428A",
+        "fields": {
+            "name": "Marmion, Columba Abbot"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431557A",
+        "fields": {
+            "name": "James A. Owen"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL3022182A",
+        "fields": {
+            "name": "Carlene Thie"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1427986A",
+        "fields": {
+            "name": "Ms. T."
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1426494A",
+        "fields": {
+            "name": "Anna Dale"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1315263A",
+        "fields": {
+            "name": "Nancy Lindheim"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425584A",
+        "fields": {
+            "name": "Steve Alton"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL757944A",
+        "fields": {
+            "name": "Helen Forrester"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1430866A",
+        "fields": {
+            "name": "Southern Conference on Women's History (6th 2003 Athens, Ga.)"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431915A",
+        "fields": {
+            "name": "Ryan C. Hendrickson"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1425595A",
+        "fields": {
+            "name": "Anna McQuinn"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1429506A",
+        "fields": {
+            "name": "Karen Harter"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1431125A",
+        "fields": {
+            "name": "Hazel Rash Fleming"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL1432476A",
+        "fields": {
+            "name": "Virgil W. Dean"
+        }
+    },
+    {
+        "model": "store.author",
+        "pk": "OL336504A",
+        "fields": {
+            "name": "Alexander McCall Smith"
+        }
+    }
+]
