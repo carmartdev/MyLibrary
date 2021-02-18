@@ -1,16 +1,17 @@
 SOURCES = $(wildcard *.py) $(wildcard */*.py)
 INTERPRETER = python
+MANAGE = $(INTERPRETER) manage.py
 
 runserver:
-	$(INTERPRETER) manage.py runserver
+	$(MANAGE) runserver
 
 tests: system_tests unit_tests
 
 system_tests:
-	$(INTERPRETER) manage.py behave
+	$(MANAGE) behave
 
 unit_tests:
-	$(INTERPRETER) manage.py test
+	$(MANAGE) test
 
 tags:
 	ctags -f tags -R --fields=+iaS --extras=+q $(SOURCES)
@@ -18,6 +19,19 @@ tags:
 include_tags:
 	ctags -f include_tags -R --languages=python --fields=+iaS --extras=+q \
 		/usr/lib/python3.8/
+
+recreate_database: store/fixtures/authors.json store/fixtures/books.json
+	rm -f db.sqlite3
+	$(MANAGE) migrate
+	$(MANAGE) loaddata authors
+	$(MANAGE) loaddata books
+
+store/fixtures/authors.json:
+	rm -f misc/*.json
+	cd misc; $(INTERPRETER) create_fixtures.py
+	mv misc/*.json store/fixtures/
+
+store/fixtures/books.json: store/fixtures/authors.json
 
 clean:
 	rm -rf tags include_tags __pycache__ */__pycache__ */*/__pycache__ \
