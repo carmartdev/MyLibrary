@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for book in books %}
+                {% for book in page_obj %}
                 <tr class="align-middle">
                     <td>{{ book.title }}</td>
                     <td>by {{ book.authors.all|join:", " }}</td>
@@ -48,4 +48,27 @@
     {% else %}
         <p>No books are available.</p>
     {% endif %}
+    <nav aria-label="book catalog pages">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&lt;</span>
+                  </a>
+                </li>
+            {% endif %}
+            <li class="page-item active">
+              <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+            </li>
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&gt;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 {% endblock %}
