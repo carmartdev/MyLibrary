@@ -1,54 +1,48 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
-{% block header_text %}Bookstore{% endblock %}
 {% block body %}
-    <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold position-absolute top-0 end-0 mx-2 my-2 btn btn-outline-secondary"
-            href="{% url 'store:cart' %}">
-        Cart
-        {% if request.session.cart|length %}
-            [{{ request.session.cart|length }}]
-        {% endif %}
-    </a>
+<div>
+    <div class="row">
+        <h1 class="col mx-5">Bookstore</h1>
+        <div class="col col-auto mx-5 my-2">
+            <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
+                    href="{% url 'store:cart' %}">
+                Cart
+                {% if request.session.cart|length %}
+                    [{{ request.session.cart|length }}]
+                {% endif %}
+            </a>
+        </div>
+    </div>
     {% if books %}
-        <table id="id_book_catalog" class="table table-borderless table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Price</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for book in page_obj %}
-                <tr class="align-middle">
-                    <td>{{ book.title }}</td>
-                    <td>by {{ book.authors.all|join:", " }}</td>
-                    <td>${{ book.price }}</td>
-                    <td>
+        <div id="id_book_catalog" class="row justify-content-center">
+            {% for book in page_obj %}
+                <div class="card text-end mx-2" style="width: 220px;">
+                    <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg" class="card-img-top" style="height: 300px;" alt="book cover">
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text fw-bold">${{ book.price }}</p>
                         {% if book.pk in request.session.cart %}
-                        <form action="{% url 'store:cart' %}">
-                            <button class="text-uppercase fw-bold btn btn-secondary">
-                                in cart
-                            </button>
-                        </form>
+                            <form action="{% url 'store:cart' %}">
+                                <button class="text-uppercase fw-bold btn btn-secondary">
+                                    in cart
+                                </button>
+                            </form>
                         {% else %}
-                        <form action="{% url 'store:add' book.pk %}" method="POST">
-                            {% csrf_token %}
-                            <button class="text-uppercase fw-bold btn btn-outline-secondary">
-                                add to cart
-                            </button>
-                        </form>
+                            <form action="{% url 'store:add' book.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button class="text-uppercase fw-bold btn btn-outline-secondary">
+                                    add to cart
+                                </button>
+                            </form>
                         {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     {% else %}
         <p>No books are available.</p>
     {% endif %}
-    <nav aria-label="book catalog pages">
+    <nav class="row mx-2 my-2" aria-label="book catalog pages">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
                 <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
@@ -71,4 +65,5 @@
             {% endif %}
         </ul>
     </nav>
+</div>
 {% endblock %}

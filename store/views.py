@@ -8,7 +8,7 @@ class HomePage(generic.ListView):
     model = Book
     context_object_name = "books"
     template_name = "store/index.html"
-    paginate_by = 9
+    paginate_by = 5
 
 @require_POST
 def delete_from_cart(request, item_id):
