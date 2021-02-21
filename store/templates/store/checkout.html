@@ -1,8 +1,14 @@
 {% extends "store/base.html" %}
 {% block title_text %}Checkout{% endblock %}
-{% block header_text %}Here will be checkout page one day{% endblock %}
 {% block body %}
-    <a class="btn btn-primary mx-2" href="{% url 'store:home' %}">
-        continue shopping
-    </a>
+<div class="row">
+    <h1 class="my-5 text-center">This is a demo store. You can't buy a real thing here.</h1>
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-primary btn-lg my-3" href="{% url 'store:home' %}">
+                back to catalog
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
