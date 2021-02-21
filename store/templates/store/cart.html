@@ -1,7 +1,7 @@
 {% extends "store/base.html" %}
 {% block title_text %}Your Shopping Cart{% endblock %}
-{% block header_text %}Your Shopping Cart{% endblock %}
 {% block body %}
+    <h1 class="col mx-2">Your Shopping Cart</h1>
     {% if cart %}
         <form id="id_update_form" action="{% url 'store:update' %}" method="POST">
             {% csrf_token %}
