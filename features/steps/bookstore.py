@@ -56,7 +56,7 @@ def cart_link_is_in_top_right_corner(context):
     context.browser.set_window_size(1024, 768)
     cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
     context.test.assertAlmostEqual(cart.location["x"] + cart.size["width"],
-                                   1024, delta=20)
+                                   964, delta=20)
     context.test.assertAlmostEqual(cart.location["y"], 0, delta=20)
 
 @given("shopping cart is empty")
@@ -65,9 +65,9 @@ def cart_is_empty(context):
     cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
     context.test.assertEqual("cart".upper(), cart.text.upper())
 
-@when("Betty adds to cart book '{title}'")
-def add_book_to_cart(context, title):
-    path = f"//td[contains(text(), '{title}')]/following::button"
+@when("Betty adds to cart book '{title}' by '{authors}'")
+def add_book_to_cart(context, title, authors):
+    path = f"//img[@alt='{title} by {authors}']/following::button"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @then("she notices counter near cart button showing '{number:n}'")
@@ -75,9 +75,9 @@ def counter_shows(context, number):
     cart = wait_for(lambda: context.browser.find_element_by_id("id_cart"))
     context.test.assertIn(str(number), cart.text)
 
-@then("button near book '{book_title}' now says '{button_caption}'")
-def button_near_book_says(context, book_title, button_caption):
-    path = f"//td[contains(text(), '{book_title}')]/following::button"
+@then("button near book '{title}' by '{authors}' now says '{button_caption}'")
+def button_near_book_says(context, title, authors, button_caption):
+    path = f"//img[@alt='{title} by {authors}']/following::button"
     button = wait_for(lambda: context.browser.find_element_by_xpath(path))
     context.test.assertEqual(button.text.upper(), "in cart".upper())
 

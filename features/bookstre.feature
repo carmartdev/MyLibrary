@@ -16,13 +16,13 @@ Feature: Bookstore
             And she can see link to her cart in the top right corner
 
         Given shopping cart is empty
-        When Betty adds to cart book 'Ohlolap'
+        When Betty adds to cart book 'Ohlolap' by 'Esuuz Phohoo'
         Then she notices counter near cart button showing '1'
             And shopping cart contains book 'Ohlolap'
-            And button near book 'Ohlolap' now says 'In Cart'
+            And button near book 'Ohlolap' by 'Esuuz Phohoo' now says 'In Cart'
 
         Given shopping cart contains book 'Ohlolap'
-        When Betty tries to add book 'Ohlolap' again
+        When Betty tries to add book 'Ohlolap' by 'Esuuz Phohoo' again
         Then she is redirected to cart page
 
         Given Betty is on cart page
@@ -30,7 +30,7 @@ Feature: Bookstore
         Then she is redirected to home page
 
         Given shopping cart contains book 'Ohlolap'
-        When Betty adds to cart book 'Aererey'
+        When Betty adds to cart book 'Aererey' by 'Pooepex Uojmeik'
         Then she notices counter near cart button showing '2'
             And shopping cart contains book 'Ohlolap'
             And shopping cart contains book 'Aererey'
