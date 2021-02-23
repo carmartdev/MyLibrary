@@ -38,3 +38,4 @@ def selenium_browser_firefox(context):
 def before_all(context):
     use_fixture(selenium_browser_firefox, context)
     context.session_store = import_module(settings.SESSION_ENGINE).SessionStore
+    context.fixtures = ["authors.json", "books.json"]

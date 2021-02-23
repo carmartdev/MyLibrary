@@ -17,18 +17,6 @@ def wait_for(fn, timeout=5):
                 raise e
             sleep(0.5)
 
-@given("a set of books is available for sale")
-def fill_test_database(context):
-    def random_key(size):
-        return "".join(random.choice(ascii_letters) for _ in range(size))
-
-    for i, b in enumerate(context.table):
-        author = Author(name=b["author"], key=random_key(6))
-        author.save()
-        book = Book(title=b["title"], price=b["price"], key=random_key(6))
-        book.save()
-        book.authors.add(author)
-
 @given("new browser session is started")
 def clear_cookies(context):
     context.browser.delete_all_cookies()
@@ -115,7 +103,7 @@ def buyer_can_see_book_in_her_cart(context, title):
     except NoSuchElementException:
         context.test.fail(f"Buyer can't see book {title} in her cart")
 
-@when("she changes quantity for '{title:w}' to '{qty:n}'")
+@when("she changes quantity for '{title}' to '{qty:n}'")
 def change_book_qty(context, title, qty):
     path = f"//td[contains(text(), '{title}')]/following::input"
     qty_input = wait_for(lambda: context.browser.find_element_by_xpath(path))
