@@ -33,7 +33,7 @@ def add_to_cart(request, item_id):
     cart = request.session.get("cart", {})
     cart[book.pk] = 1
     request.session["cart"] = cart
-    return redirect("store:home")
+    return redirect(request.META.get("HTTP_REFERER"))
 
 def show_cart(request):
     cart = request.session.get("cart", {})

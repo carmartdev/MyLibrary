@@ -56,3 +56,9 @@ Feature: Bookstore
         Given new browser session is started
             And Tang opens bookstore homepage in his browser
         Then his shopping cart is empty
+
+    Scenario: when buyer adds book to cart she is redirected to the same page
+        Given Betty opens bookstore homepage in her browser
+        When Betty navigates to page '17'
+            And Betty adds to cart book 'Caring for your dog' by 'June Preszler'
+        Then she is redirected to page '17'

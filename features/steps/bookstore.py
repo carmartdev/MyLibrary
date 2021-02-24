@@ -138,5 +138,14 @@ def click_checkout(context):
              ).click()
 
 @then("she is redirected to checkout page")
-def list_of_payment_methods_is_shown(context):
+def checkout_page_loaded(context):
     context.test.assertIn("Checkout", context.browser.title)
+
+@when("Betty navigates to page '{page_num}'")
+def navigate_to_page(context, page_num):
+    context.browser.get(f"{context.base_url}/?page={page_num}")
+
+@then("she is redirected to page '{page_num}'")
+def step_impl(context, page_num):
+    context.test.assertEqual(f"{context.base_url}/?page={page_num}",
+                             context.browser.current_url)
