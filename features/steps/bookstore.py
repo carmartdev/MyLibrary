@@ -146,6 +146,15 @@ def navigate_to_page(context, page_num):
     context.browser.get(f"{context.base_url}/?page={page_num}")
 
 @then("she is redirected to page '{page_num}'")
-def step_impl(context, page_num):
+def check_buyer_is_redirected_to_page(context, page_num):
     context.test.assertEqual(f"{context.base_url}/?page={page_num}",
                              context.browser.current_url)
+
+@when("Betty clicks on cover of book '{title}' by '{authors}'")
+def click_on_book_cover(context, title, authors):
+    path = f"//img[@alt='{title} by {authors}']"
+    wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
+
+@then("Betty is redirected to page with details for book '{title}' by '{authors}'")
+def check_buyer_is_redirected_to_book_details(context, title, authors):
+    context.test.assertIn(f"{title} by {authors}", context.browser.title)

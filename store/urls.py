@@ -9,4 +9,5 @@ urlpatterns = [
     path("update", views.update_cart, name="update"),
     path("cart/", views.show_cart, name="cart"),
     path("checkout/", views.checkout, name="checkout"),
+    path("book/<slug:pk>/", views.BookInfo.as_view(), name="book-info"),
 ]

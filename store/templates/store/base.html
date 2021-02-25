@@ -8,12 +8,15 @@
               href="{% static 'bootstrap/css/bootstrap.min.css' %}"
               integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
               crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'store/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
         <link rel="shortcut icon" type="image/png"
               href="{% static 'store/favicon.ico' %}"/>
         <title>{% block title_text %}{% endblock %}</title>
     </head>
     <body>
         {% block body %}{% endblock %}
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
     </body>
 </html>

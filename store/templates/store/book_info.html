@@ -1,0 +1,22 @@
+{% extends "store/base.html" %}
+{% block title_text %}{{ book.title }} by {{ book.authors.all|join:', ' }}{% endblock %}
+{% block body %}
+    <h1>{{ book.title }}</h1>
+    <h2>by {{ book.authors.all|join:', ' }}</h2>
+    <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
+         alt="{{ book.title }} by {{ book.authors.all|join:', ' }}"
+         title="{{ book.title }} by {{ book.authors.all|join:', ' }}">
+    <p>Price: {{ book.price }}</p>
+    <p>Description: {{ book.description }}</p>
+    <p>Publisher: {{ book.publisher }}</p>
+    <p>Publish date: {{ book.publish_date }}</p>
+    <p>ISBN-10: {{ book.isbn_10 }}</p>
+    <p>ISBN-13: {{ book.isbn_13 }}</p>
+{% endblock %}
+{% block footer %}
+    <div class="col text-center">
+        Book data is borrowed from&nbsp;
+        <a href="https://openlibrary.org/">Open Library</a>;&nbsp;
+        price is generated randomly
+    </div>
+{% endblock %}

@@ -62,3 +62,8 @@ Feature: Bookstore
         When Betty navigates to page '17'
             And Betty adds to cart book 'Caring for your dog' by 'June Preszler'
         Then she is redirected to page '17'
+
+    Scenario: buyer can see description by clicking on book cover
+        Given Betty opens bookstore homepage in her browser
+        When Betty clicks on cover of book '100 malicious little mysteries' by 'Isaac Asimov'
+        Then Betty is redirected to page with details for book '100 malicious little mysteries' by 'Isaac Asimov'
