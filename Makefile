@@ -33,6 +33,17 @@ store/fixtures/authors.json:
 
 store/fixtures/books.json: store/fixtures/authors.json
 
+coverage_measure:
+	coverage run --source=store --omit=*/tests.py,*/apps.py,*/migrations/* \
+		./manage.py test
+	coverage report -m
+
+coverage_measure_html:
+	coverage run --source=store --omit=*/tests.py,*/apps.py,*/migrations/* \
+		./manage.py test
+	coverage html
+	@xdg-open htmlcov/index.html
+
 clean:
 	rm -rf tags include_tags __pycache__ */__pycache__ */*/__pycache__ \
 		.mypy_cache */.mypy_cache */*/.mypy_cache .coverage htmlcov static
