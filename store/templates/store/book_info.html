@@ -3,10 +3,12 @@
 {% block body %}
     <h1>{{ book.title }}</h1>
     <h2>by {{ book.authors.all|join:', ' }}</h2>
-    <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
-         alt="{{ book.title }} by {{ book.authors.all|join:', ' }}"
-         title="{{ book.title }} by {{ book.authors.all|join:', ' }}">
-    <p>Price: {{ book.price }}</p>
+    <div>
+        <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
+             alt="{{ book.title }} by {{ book.authors.all|join:', ' }}"
+             title="{{ book.title }} by {{ book.authors.all|join:', ' }}">
+    </div>
+    <p>Price: ${{ book.price }}</p>
     <p>Description: {{ book.description }}</p>
     <p>Publisher: {{ book.publisher }}</p>
     <p>Publish date: {{ book.publish_date }}</p>

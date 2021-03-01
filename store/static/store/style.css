@@ -1,6 +1,16 @@
+body {
+    background-color: #fac68e;
+    overflow-x: hidden;
+}
+
 footer {
-    width: 100%;
-    bottom: 0;
-    position: fixed;
     font-size: 0.8rem;
+}
+
+.card {
+    background-color: #ffe6ac;
+}
+
+.pagination > li > a {
+    background-color: #ffe6ac;
 }

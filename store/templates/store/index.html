@@ -17,7 +17,7 @@
     {% if books %}
         <div id="id_book_catalog" class="row justify-content-center">
             {% for book in page_obj %}
-                <div class="card text-end mx-2" style="width: 220px;">
+                <div class="card text-end mx-2 my-2" style="width: 220px;">
                     <a href="{% url 'store:book-info' book.pk %}">
                         <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
                              class="card-img-top"
