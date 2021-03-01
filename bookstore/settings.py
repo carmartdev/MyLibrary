@@ -20,25 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-if "BOOKSTORE_DEBUG_FALSE" in os.environ:
-    DEBUG = False
-    SECRET_KEY = os.environ["BOOKSTORE_SECRET_KEY"]
-    ALLOWED_HOSTS = [os.environ["SITENAME"]]
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
-else:
-    DEBUG = True
-    SECRET_KEY = "3g0*s33l(p=n)n6#cw58s#^&#crd_5jj9%@j-d*qdk_1v%r+p5"
-    ALLOWED_HOSTS = []
-
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,8 +28,43 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
-    'behave_django',
 ]
+
+if 'BOOKSTORE_DEBUG_FALSE' in os.environ:
+    DEBUG = False
+    SECRET_KEY = os.environ['BOOKSTORE_SECRET_KEY']
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': f'{os.environ["BOOKSTORE_DB_USER"]}${os.environ["BOOKSTORE_DB_NAME"]}',
+            'USER': f'{os.environ["BOOKSTORE_DB_USER"]}',
+            'PASSWORD': f'{os.environ["BOOKSTORE_DB_PASSWORD"]}',
+            'HOST': f'{os.environ["BOOKSTORE_DB_HOSTNAME"]}',
+        }
+    }
+else:
+    DEBUG = True
+    SECRET_KEY = '3g0*s33l(p=n)n6#cw58s#^&#crd_5jj9%@j-d*qdk_1v%r+p5'
+    ALLOWED_HOSTS = []
+    INSTALLED_APPS += [
+        'behave_django',
+    ]
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,17 +97,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bookstore.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -116,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = "Europe/Samara"
+TIME_ZONE = 'Europe/Samara'
 
 USE_I18N = True
 
