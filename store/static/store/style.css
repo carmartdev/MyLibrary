@@ -1,14 +1,38 @@
+html {
+    height: 100%;
+}
+
 body {
     background-color: #fac68e;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.info-window {
+    background-color: #ffe6ac;
+}
+
+.vh-100 {
+    min-height: 100vh;
 }
 
 footer {
     font-size: 0.8rem;
+    width: 100%;
 }
 
 .card {
     background-color: #ffe6ac;
+    width: 220px;
+}
+
+.card-img-top {
+    height: 300px;
 }
 
 .pagination > li > a {

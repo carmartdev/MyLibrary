@@ -1,76 +1,90 @@
 {% extends "store/base.html" %}
 {% block title_text %}Your Shopping Cart{% endblock %}
 {% block body %}
-    <h1 class="col mx-2">Your Shopping Cart</h1>
+<div class="container">
     {% if cart %}
+        <div class="row">
+            <h1 class="col">Your Shopping Cart</h1>
+        </div>
         <form id="id_update_form" action="{% url 'store:update' %}" method="POST">
             {% csrf_token %}
         </form>
-        <table id="id_book_catalog" class="table table-borderless table-striped">
-            <thead>
+        <div class="row">
+            <table id="id_book_catalog" class="table table-borderless table-striped">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart %}
+                        <tr class="align-middle">
+                            <td>{{ forloop.counter }}.</td>
+                            <td>{{ item.title|title }}</td>
+                            <td>by {{ item.authors.all|join:", " }}</td>
+                            <td>${{ item.price }}</td>
+                            <td>
+                                <input type="number"
+                                       min="1"
+                                       size="4"
+                                       name="qty {{ item.pk }}"
+                                       value="{{ item.qty }}"
+                                       form="id_update_form">
+                            </td>
+                            <td>${{ item.total }}</td>
+                            <td>
+                                <form action="{% url 'store:delete' item.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn-close" aria-label="Close">
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <thead>
                 <tr>
-                    <th>№</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Subtotal</th>
+                    <th id="id_total_price">${{ total_price }}</th>
                     <th></th>
                 </tr>
-            </thead>
-            <tbody>
-                {% for item in cart %}
-                    <tr class="align-middle">
-                        <td>{{ forloop.counter }}.</td>
-                        <td>{{ item.title }}</td>
-                        <td>by {{ item.authors.all|join:", " }}</td>
-                        <td>${{ item.price }}</td>
-                        <td>
-                            <input type="number"
-                                   min="1"
-                                   size="4"
-                                   name="qty {{ item.pk }}"
-                                   value="{{ item.qty }}"
-                                   form="id_update_form">
-                        </td>
-                        <td>${{ item.total }}</td>
-                        <td>
-                            <form action="{% url 'store:delete' item.pk %}" method="POST">
-                                {% csrf_token %}
-                                <button class="btn-close" aria-label="Close">
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-            <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>Subtotal</th>
-                <th id="id_total_price">${{ total_price }}</th>
-                <th></th>
-            </tr>
-            </thead>
-        </table>
-        <div class="position-absolute end-0 mx-5">
-            <a class="btn btn-primary mx-2" href="{% url 'store:home' %}">
-                continue shopping
-            </a>
-            <button name="update" class="btn btn-primary" form="id_update_form">
-                update cart
-            </button>
-            <a id="id_checkout_button" class="btn btn-primary" href="{% url 'store:checkout' %}">
-                checkout
-            </a>
+                </thead>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-auto">
+                <a class="btn btn-primary" href="{% url 'store:home' %}">
+                    continue shopping
+                </a>
+                <button name="update" class="btn btn-primary" form="id_update_form">
+                    update cart
+                </button>
+                <a id="id_checkout_button" class="btn btn-primary" href="{% url 'store:checkout' %}">
+                    checkout
+                </a>
+            </div>
         </div>
     {% else %}
-        <p>Your Shopping Cart is empty</p>
-        <a class="btn btn-primary mx-2" href="{% url 'store:home' %}">
-            continue shopping
-        </a>
+        <div class="row vh-100 align-items-center text-center">
+            <div>
+                <h3 class="my-3">Your Shopping Cart is empty</h3>
+                <a class="btn btn-primary" href="{% url 'store:home' %}">
+                    continue shopping
+                </a>
+            </div>
+        </div>
     {% endif %}
+</div>
 {% endblock %}

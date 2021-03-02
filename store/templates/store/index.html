@@ -1,10 +1,10 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
 {% block body %}
-<div>
-    <div class="row">
-        <h1 class="col mx-5">Bookstore</h1>
-        <div class="col col-auto mx-5 my-2">
+<div class="container">
+    <div class="row align-items-center">
+        <h1 class="col">Bookstore</h1>
+        <div class="col col-auto">
             <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
                     href="{% url 'store:cart' %}">
                 Cart
@@ -15,15 +15,14 @@
         </div>
     </div>
     {% if books %}
-        <div id="id_book_catalog" class="row justify-content-center">
+        <div id="id_book_catalog" class="row justify-content-center info-window rounded">
             {% for book in page_obj %}
-                <div class="card text-end mx-2 my-2" style="width: 220px;">
+                <div class="card text-end mx-2 my-2">
                     <a href="{% url 'store:book-info' book.pk %}">
                         <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
                              class="card-img-top"
-                             style="height: 300px;"
-                             alt="{{ book.title }} by {{ book.authors.all|join:', ' }}"
-                             title="{{ book.title }} by {{ book.authors.all|join:', ' }}">
+                             alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
+                             title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
                     </a>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text fw-bold">${{ book.price }}</p>

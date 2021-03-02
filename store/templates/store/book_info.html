@@ -1,19 +1,46 @@
 {% extends "store/base.html" %}
-{% block title_text %}{{ book.title }} by {{ book.authors.all|join:', ' }}{% endblock %}
+{% block title_text %}{{ book.title|title }} by {{ book.authors.all|join:', ' }}{% endblock %}
 {% block body %}
-    <h1>{{ book.title }}</h1>
-    <h2>by {{ book.authors.all|join:', ' }}</h2>
-    <div>
-        <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
-             alt="{{ book.title }} by {{ book.authors.all|join:', ' }}"
-             title="{{ book.title }} by {{ book.authors.all|join:', ' }}">
+    <div class="container">
+        <div class="row info-window rounded my-5">
+            <div class="row my-2">
+                <div class="col-auto my-2">
+                    <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
+                         class="rounded"
+                         alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
+                         title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
+                </div>
+                <div class="col">
+                    <h1>{{ book.title|title }}</h1>
+                    <h2>by {{ book.authors.all|join:', ' }}</h2>
+                    <h4 class="py-3">{{ book.description }}</h4>
+                    <p><b>Publisher:</b> {{ book.publisher }}</p>
+                    <p><b>Publication date:</b> {{ book.publish_date }}</p>
+                    <p><b>ISBN-10:</b> {{ book.isbn_10 }}</p>
+                    <p><b>ISBN-13:</b> {{ book.isbn_13 }}</p>
+                </div>
+                <div class="col-auto d-flex flex-column text-end">
+                    <h2 class="my-2">${{ book.price }}</h2>
+                    <div class="mt-auto my-3">
+                        {% if book.pk in request.session.cart %}
+                            <form action="{% url 'store:cart' %}">
+                                <button class="text-uppercase fw-bold btn btn-secondary">
+                                    in cart
+                                </button>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'store:add' book.pk %}" method="POST">
+                                {% csrf_token %}
+                                <button class="text-uppercase fw-bold btn btn-outline-secondary">
+                                    add to cart
+                                </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <p>Price: ${{ book.price }}</p>
-    <p>Description: {{ book.description }}</p>
-    <p>Publisher: {{ book.publisher }}</p>
-    <p>Publish date: {{ book.publish_date }}</p>
-    <p>ISBN-10: {{ book.isbn_10 }}</p>
-    <p>ISBN-13: {{ book.isbn_13 }}</p>
 {% endblock %}
 {% block footer %}
     <div class="col text-center">

@@ -8,15 +8,11 @@ class HomePage(generic.ListView):
     model = Book
     context_object_name = "books"
     template_name = "store/index.html"
-    paginate_by = 5
+    paginate_by = 10
 
 class BookInfo(generic.detail.DetailView):
     model = Book
     template_name = "store/book_info.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
 
 @require_POST
 def delete_from_cart(request, item_id):

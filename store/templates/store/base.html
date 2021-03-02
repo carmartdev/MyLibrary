@@ -13,9 +13,11 @@
               href="{% static 'store/favicon.ico' %}"/>
         <title>{% block title_text %}{% endblock %}</title>
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        <footer class="my-3">
+    <body class="vh-100">
+        <div class="content">
+            {% block body %}{% endblock %}
+        </div>
+        <footer class="py-3">
             {% block footer %}{% endblock %}
         </footer>
     </body>
