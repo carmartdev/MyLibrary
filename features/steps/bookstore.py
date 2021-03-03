@@ -2,20 +2,10 @@
 # -*- coding: utf-8 -*-
 import random
 from string import ascii_letters
-from time import sleep, time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from store.models import Author, Book
-
-def wait_for(fn, timeout=5):
-    stime = time()
-    while True:
-        try:
-            return fn()
-        except (AssertionError, NoSuchElementException) as e:
-            if time() - stime > timeout:
-                raise e
-            sleep(0.5)
+from aux import wait_for
 
 @given("new browser session is started")
 def clear_cookies(context):
