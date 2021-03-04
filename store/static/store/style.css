@@ -21,6 +21,10 @@ body {
     min-height: 100vh;
 }
 
+.search-btn {
+    background-color: #ffe6ac;
+}
+
 footer {
     font-size: 0.8rem;
     width: 100%;

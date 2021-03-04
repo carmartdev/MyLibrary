@@ -1,4 +1,5 @@
 import re
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
 from django.views.decorators.http import require_POST
@@ -9,6 +10,12 @@ class HomePage(generic.ListView):
     context_object_name = "books"
     template_name = "store/index.html"
     paginate_by = 10
+
+class Search(HomePage):
+    def get_queryset(self):
+        query = self.request.GET.get("query")
+        return super().get_queryset().filter(Q(title__icontains=query) |
+                                             Q(authors__name__icontains=query))
 
 class BookInfo(generic.detail.DetailView):
     model = Book
