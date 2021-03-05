@@ -9,6 +9,7 @@ urlpatterns = [
     path("update", views.update_cart, name="update"),
     path("cart/", views.show_cart, name="cart"),
     path("checkout/", views.checkout, name="checkout"),
-    path("search/", views.Search.as_view(), name="search"),
+    path("search/", views.search, name="search"),
+    path("search/<str:query>/", views.Search.as_view(), name="search-restful"),
     path("book/<slug:pk>/", views.BookInfo.as_view(), name="book-info"),
 ]

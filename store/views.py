@@ -13,9 +13,12 @@ class HomePage(generic.ListView):
 
 class Search(HomePage):
     def get_queryset(self):
-        query = self.request.GET.get("query")
+        query = self.kwargs.get("query")
         return super().get_queryset().filter(Q(title__icontains=query) |
                                              Q(authors__name__icontains=query))
+
+def search(request):
+    return redirect("store:search-restful", query=request.GET.get("query"))
 
 class BookInfo(generic.detail.DetailView):
     model = Book
