@@ -1,7 +1,7 @@
 {% extends "store/base.html" %}
 {% block title_text %}Your Shopping Cart{% endblock %}
+{% block header %}{% endblock %}
 {% block body %}
-<div class="container">
     {% if cart %}
         <div class="row">
             <h1 class="col">Your Shopping Cart</h1>
@@ -86,5 +86,5 @@
             </div>
         </div>
     {% endif %}
-</div>
 {% endblock %}
+{% block footer %}{% endblock %}

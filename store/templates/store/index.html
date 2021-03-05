@@ -1,29 +1,6 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
 {% block body %}
-<div class="container">
-    <div class="row align-items-center">
-        <a class="col-auto text-body text-decoration-none" href="{% url 'store:home' %}">
-            <h1>Bookstore</h1>
-        </a>
-        <form class="col input-group" action="{% url 'store:search' %}">
-            <input name="query" type="text" class="form-control" aria-label="Search catalog">
-            <button class="btn search-btn input-group-text" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                </svg>
-            </button>
-        </form>
-        <div class="col-auto">
-            <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
-                    href="{% url 'store:cart' %}">
-                Cart
-                {% if request.session.cart|length %}
-                    [{{ request.session.cart|length }}]
-                {% endif %}
-            </a>
-        </div>
-    </div>
     {% if books %}
         <div id="id_book_catalog" class="row justify-content-center info-window rounded">
             {% for book in page_obj %}
@@ -81,11 +58,4 @@
         </ul>
     </nav>
 </div>
-{% endblock %}
-{% block footer %}
-    <div class="col text-center">
-        All books data is borrowed from&nbsp;
-        <a href="https://openlibrary.org/">Open Library</a>;&nbsp;
-        prices are generated randomly
-    </div>
 {% endblock %}

@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+.search-bar {
+    min-width: 50vw;
+}
+
 .content {
     flex: 1;
 }
