@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.html import escape, strip_tags
 from django.views import generic
 from django.views.decorators.http import require_POST
 from store.models import Author, Book
@@ -21,7 +22,11 @@ class Search(HomePage):
                                              Q(authors__name__icontains=query))
 
 def search(request):
-    return redirect("store:search-restful", query=request.GET.get("query"))
+    query = escape(strip_tags(request.GET.get("query")))
+    if query:
+        return redirect("store:search-restful", query=query)
+    else:
+        return redirect("store:home")
 
 class BookInfo(generic.detail.DetailView):
     model = Book
