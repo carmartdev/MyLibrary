@@ -18,7 +18,7 @@ class Book(models.Model):
     publisher = models.TextField()
     publish_date = models.CharField(max_length=50)
     description = models.TextField()
-    cover = models.CharField(max_length=7)
+    cover = models.URLField()
     isbn_10 = models.CharField(max_length=10)
     isbn_13 = models.CharField(max_length=13)
     price = models.DecimalField(max_digits=6, decimal_places=2)

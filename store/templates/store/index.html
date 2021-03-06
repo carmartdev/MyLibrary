@@ -9,7 +9,7 @@
             {% for book in page_obj %}
                 <div class="card text-end mx-2 my-2">
                     <a href="{% url 'store:book-info' book.pk %}">
-                        <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
+                        <img src="{{ book.cover }}"
                              class="card-img-top"
                              alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
                              title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">

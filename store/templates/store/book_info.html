@@ -4,7 +4,7 @@
     <div class="info-window rounded">
         <div class="row my-2">
             <div class="col-auto my-2">
-                <img src="https://covers.openlibrary.org/b/id/{{ book.cover }}-M.jpg"
+                <img src="{{ book.cover }}"
                      class="rounded"
                      alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
                      title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
