@@ -101,6 +101,7 @@ def filter_book_fields(books):
         prefix = b.get("title_prefix", "")
         return f"{prefix} {b['title']}" if prefix else b["title"]
 
+    cover_uri = "https://covers.openlibrary.org/b/id/{}-M.jpg"
     return [dict(model="store.book",
                  pk=b["key"][7:],
                  fields=dict(title=get_full_title(b),
@@ -108,7 +109,7 @@ def filter_book_fields(books):
                              publisher=b["publishers"][0],
                              publish_date=b["publish_date"],
                              description=plain_description(b["description"]),
-                             cover=b["covers"][0],
+                             cover=cover_uri.format(b["covers"][0]),
                              isbn_10=b["isbn_10"][0],
                              isbn_13=b["isbn_13"][0],
                              price=randint(100, 1000)/10))
