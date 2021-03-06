@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Author(models.Model):
     key = models.CharField(max_length=10, primary_key=True)
@@ -26,7 +27,10 @@ class Book(models.Model):
         ordering = ["title"]
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"{self.title} by {self._authors()}"
+
+    def _authors(self):
+        return ", ".join(author.name for author in self.authors.all())
 
     def get_absolute_url(self):
-        return reverse("store:book", args=[self.id])
+        return reverse("store:book-info", args=[self.pk])
