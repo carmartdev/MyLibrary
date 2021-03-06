@@ -1,6 +1,9 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
 {% block body %}
+    {% if view.kwargs.query %}
+        <h5>Search results for "{{ view.kwargs.query }}":</h5>
+    {% endif %}
     {% if books %}
         <div id="id_book_catalog" class="row justify-content-center info-window rounded">
             {% for book in page_obj %}

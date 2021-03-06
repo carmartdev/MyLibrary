@@ -9,8 +9,8 @@ def search(context, keyword):
     search = wait_for(lambda: context.browser.find_element_by_name("query"))
     search.send_keys(keyword)
     search.send_keys(Keys.ENTER)
-    while "search" not in context.browser.current_url:
-        context.browser.implicitly_wait(0.5)
+    path = f"//h5[contains(text(), 'Search results for \"{keyword}\"')]"
+    wait_for(lambda: context.browser.find_element_by_xpath(path))
 
 @then("she can see book '{title}' by '{authors}' in search results")
 def book_is_on_page(context, title, authors):

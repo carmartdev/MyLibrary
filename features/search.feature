@@ -1,6 +1,6 @@
 Feature: Search
     As a buyer
-    I want to find books in store quickly.
+    I want to find books in store quickly and with minimum effort.
 
     Scenario: buyer should be able to search books in catalog
         Given Betty opens bookstore homepage in her browser
