@@ -88,14 +88,14 @@ def buyer_can_see_her_cart(context):
 @then("she can see book '{title}' in her cart")
 def buyer_can_see_book_in_her_cart(context, title):
     try:
-        path = f"//td[contains(text(), '{title}')]"
+        path = f"//td/a[contains(text(), '{title}')]"
         wait_for(lambda: context.browser.find_element_by_xpath(path))
     except NoSuchElementException:
         context.test.fail(f"Buyer can't see book {title} in her cart")
 
 @when("she changes quantity for '{title}' to '{qty:n}'")
 def change_book_qty(context, title, qty):
-    path = f"//td[contains(text(), '{title}')]/following::input"
+    path = f"//td/a[contains(text(), '{title}')]/following::input"
     qty_input = wait_for(lambda: context.browser.find_element_by_xpath(path))
     qty_input.send_keys(Keys.CONTROL, 'a')
     qty_input.send_keys(Keys.DELETE)
@@ -104,7 +104,7 @@ def change_book_qty(context, title, qty):
 
 @when("Betty deletes from cart book '{title}'")
 def delete_book_from_cart(context, title):
-    path = f"//td[contains(text(), '{title}')]/following::button"
+    path = f"//td/a[contains(text(), '{title}')]/following::button"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @step("shopping cart does not contain book '{title}'")

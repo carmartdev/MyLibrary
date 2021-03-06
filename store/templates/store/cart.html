@@ -15,7 +15,7 @@
                     <tr>
                         <th>№</th>
                         <th>Title</th>
-                        <th>Author</th>
+                        <th>Authors</th>
                         <th>Price</th>
                         <th>Qty</th>
                         <th>Total</th>
@@ -26,8 +26,12 @@
                     {% for item in cart %}
                         <tr class="align-middle">
                             <td>{{ forloop.counter }}.</td>
-                            <td>{{ item.title|title }}</td>
-                            <td>by {{ item.authors.all|join:", " }}</td>
+                            <td>
+                                <a class="text-body" href="{% url 'store:book-info' item.pk %}">
+                                    {{ item.title|title }}
+                                </a>
+                            </td>
+                            <td>{{ item.authors.all|join:", " }}</td>
                             <td>${{ item.price }}</td>
                             <td>
                                 <input type="number"
