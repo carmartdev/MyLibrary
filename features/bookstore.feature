@@ -17,7 +17,7 @@ Feature: Bookstore
         Then she is redirected to cart page
 
         Given Betty is on cart page
-        When Betty clicks 'continue shopping' button
+        When Betty clicks '‹ Back to' button
         Then she is redirected to home page
 
         Given shopping cart contains book '100 malicious little mysteries'

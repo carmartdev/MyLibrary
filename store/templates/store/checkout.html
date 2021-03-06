@@ -5,9 +5,7 @@
     <div class="row vh-100 align-items-center text-center">
         <div>
             <h1 class="my-3">This is a demo store. You can't buy a real thing here.</h1>
-            <a class="btn btn-primary btn-lg my-3" href="{% url 'store:home' %}">
-                back to catalog
-            </a>
+            {% include "store/backlink.html" with referer=request.session.bookmark %}
         </div>
     </div>
 {% endblock %}

@@ -1,4 +1,3 @@
-import re
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import generic
@@ -10,6 +9,10 @@ class HomePage(generic.ListView):
     context_object_name = "books"
     template_name = "store/index.html"
     paginate_by = 10
+
+    def get_queryset(self):
+        self.request.session["bookmark"] = self.request.get_full_path()
+        return super().get_queryset()
 
 class Search(HomePage):
     def get_queryset(self):

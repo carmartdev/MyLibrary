@@ -1,0 +1,14 @@
+{% load aux %}
+{% if "search" in referer %}
+    <a class="link-secondary text-decoration-none" href="{{ referer }}">
+        ‹ Back to search results for "{{ referer|extract_keywords }}"
+    </a>
+{% elif "page" in referer %}
+    <a class="link-secondary text-decoration-none" href="{{ referer }}">
+        ‹ Back to catalog
+    </a>
+{% else %}
+    <a class="link-secondary text-decoration-none" href="{% url 'store:home' %}">
+        ‹ Back to catalog
+    </a>
+{% endif %}

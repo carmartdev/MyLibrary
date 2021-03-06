@@ -6,6 +6,9 @@
         <div class="row">
             <h1 class="col">Your Shopping Cart</h1>
         </div>
+        <div class="row">
+            {% include "store/backlink.html" with referer=request.session.bookmark %}
+        </div>
         <form id="id_update_form" action="{% url 'store:update' %}" method="POST">
             {% csrf_token %}
         </form>
@@ -69,9 +72,6 @@
             <div class="col">
             </div>
             <div class="col-auto">
-                <a class="btn btn-primary" href="{% url 'store:home' %}">
-                    continue shopping
-                </a>
                 <button name="update" class="btn btn-primary" form="id_update_form">
                     update cart
                 </button>
@@ -84,9 +84,7 @@
         <div class="row vh-100 align-items-center text-center">
             <div>
                 <h3 class="my-3">Your Shopping Cart is empty</h3>
-                <a class="btn btn-primary" href="{% url 'store:home' %}">
-                    continue shopping
-                </a>
+                {% include "store/backlink.html" with referer=request.session.bookmark %}
             </div>
         </div>
     {% endif %}

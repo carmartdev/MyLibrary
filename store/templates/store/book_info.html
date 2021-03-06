@@ -1,6 +1,9 @@
 {% extends "store/base.html" %}
 {% block title_text %}{{ book.title|title }} by {{ book.authors.all|join:', ' }}{% endblock %}
 {% block body %}
+    <div class="row">
+        {% include "store/backlink.html" with referer=request.session.bookmark %}
+    </div>
     <div class="info-window rounded">
         <div class="row my-2">
             <div class="col-auto my-2">
