@@ -1,6 +1,7 @@
 from functools import reduce
 from pprint import pformat
 from django.contrib import admin
+from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
 from django.utils.safestring import mark_safe
 from .models import Author, Book
@@ -24,8 +25,22 @@ class BookAdmin(admin.ModelAdmin):
 
 class SessionAdmin(admin.ModelAdmin):
     readonly_fields = ("_session_data_formatted",)
-    exclude = ("session_data",)
-    list_display = ("session_key", "_session_data", "expire_date")
+    exclude = ("session_data", "session_key",)
+    list_display = ("_session_data", "expire_date")
+
+    def get_queryset(self, request):
+        def filter_out_staff(sessions):
+            """Filter out staff sessions to prevent cookie hijacking attack."""
+            anonymous = None
+            non_staff_sessions = set()
+            for session in sessions:
+                user_id = session.get_decoded().get("_auth_user_id")
+                user = User.objects.get(id=user_id) if user_id else anonymous
+                if user is anonymous or not user.is_staff:
+                    non_staff_sessions.add(session.session_key)
+            return sessions.filter(session_key__in=non_staff_sessions)
+
+        return filter_out_staff(super().get_queryset(request))
 
     def _session_data(self, session):
         return session.get_decoded()
