@@ -18,8 +18,8 @@ class HomePage(generic.ListView):
 class Search(HomePage):
     def get_queryset(self):
         query = self.kwargs.get("query")
-        return super().get_queryset().filter(Q(title__icontains=query) |
-                                             Q(authors__name__icontains=query))
+        query = Q(title__icontains=query) | Q(authors__name__icontains=query)
+        return super().get_queryset().filter(query).distinct()
 
 def search(request):
     query = escape(strip_tags(request.GET.get("query")))
