@@ -29,8 +29,11 @@ class SessionAdmin(admin.ModelAdmin):
     list_display = ("_session_data", "expire_date")
 
     def get_queryset(self, request):
-        def filter_out_staff(sessions):
-            """Filter out staff sessions to prevent cookie hijacking attack."""
+        sessions = super().get_queryset(request)
+        if request.user.is_superuser:
+            return sessions
+        elif request.user.is_staff:
+            # filter out staff sessions to prevent cookie hijacking attack
             anonymous = None
             non_staff_sessions = set()
             for session in sessions:
@@ -39,8 +42,8 @@ class SessionAdmin(admin.ModelAdmin):
                 if user is anonymous or not user.is_staff:
                     non_staff_sessions.add(session.session_key)
             return sessions.filter(session_key__in=non_staff_sessions)
-
-        return filter_out_staff(super().get_queryset(request))
+        else:
+            return sessions.none()
 
     def _session_data(self, session):
         return session.get_decoded()
