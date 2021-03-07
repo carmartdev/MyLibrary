@@ -33,6 +33,16 @@ store/fixtures/authors.json:
 
 store/fixtures/books.json: store/fixtures/authors.json
 
+update: | sync_with_git recreate_static
+
+sync_with_git:
+	git fetch
+	git reset origin/main --hard
+
+recreate_static:
+	rm -rf static/
+	python manage.py collectstatic
+
 coverage_measure:
 	coverage run --source=store --omit=*/tests.py,*/apps.py,*/migrations/* \
 		./manage.py test
