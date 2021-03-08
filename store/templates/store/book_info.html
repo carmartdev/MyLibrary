@@ -9,12 +9,11 @@
             <div class="col-auto my-2">
                 <img src="{{ book.cover }}"
                      class="rounded"
-                     alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
-                     title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
+                     alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
             </div>
             <div class="col">
                 <h1>{{ book.title|title }}</h1>
-                <h2>by {{ book.authors.all|join:', ' }}</h2>
+                <h2>{% include "store/authorslinks.html" with authors=book.authors.all %}</h2>
                 <h4 class="py-3">{{ book.description }}</h4>
                 <p><b>Publisher:</b> {{ book.publisher }}</p>
                 <p><b>Publication date:</b> {{ book.publish_date }}</p>

@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Author(models.Model):
     key = models.CharField(max_length=10, primary_key=True)
     name = models.TextField()
@@ -10,6 +11,10 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("store:author", args=[self.pk])
+
 
 class Book(models.Model):
     key = models.CharField(max_length=11, primary_key=True)

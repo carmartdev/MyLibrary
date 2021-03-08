@@ -1,0 +1,14 @@
+{% for author in authors %}
+    {% if not forloop.first %}
+        {% if forloop.last %}
+            and
+        {% else %}
+            ,
+        {% endif %}
+    {% endif %}
+    <a class="text-body text-decoration-none"
+       href="{% url 'store:author' author.pk %}"
+       title="Show more books by {{ author }}">
+        {{ author }}
+    </a>
+{% endfor %}

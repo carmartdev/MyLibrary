@@ -3,6 +3,10 @@
     <a class="link-secondary text-decoration-none" href="{{ referer }}">
         ‹ Back to search results for "{{ referer|extract_keywords }}"
     </a>
+{% elif "author" in referer %}
+    <a class="link-secondary text-decoration-none" href="{{ referer }}">
+        ‹ Back
+    </a>
 {% elif "page" in referer %}
     <a class="link-secondary text-decoration-none" href="{{ referer }}">
         ‹ Back to catalog

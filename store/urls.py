@@ -12,4 +12,5 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("search/<str:query>/", views.Search.as_view(), name="search-restful"),
     path("book/<slug:pk>/", views.BookInfo.as_view(), name="book-info"),
+    path("author/<slug:author_id>/", views.AuthorPage.as_view(), name="author"),
 ]

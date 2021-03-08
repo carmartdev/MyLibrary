@@ -21,6 +21,17 @@ class Search(HomePage):
         query = Q(title__icontains=query) | Q(authors__name__icontains=query)
         return super().get_queryset().filter(query).distinct()
 
+class AuthorPage(HomePage):
+    def get_queryset(self):
+        pk = self.kwargs.get("author_id")
+        return super().get_queryset().filter(authors__key__contains=pk)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["author"] = Author.objects.get(pk=self.kwargs.get("author_id"))
+        return context
+
+
 def search(request):
     query = escape(strip_tags(request.GET.get("query")))
     if query:
