@@ -29,9 +29,9 @@
                     </button>
                 </form>
                 <div class="col-auto">
-                    <a id="id_cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
+                    <a id="id-cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
                                                           href="{% url 'store:cart' %}">
-                        Cart
+                        🛒 Cart
                         {% if request.session.cart|length %}
                         [{{ request.session.cart|length }}]
                         {% endif %}

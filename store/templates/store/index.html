@@ -7,7 +7,7 @@
         <h5>Books by {{ author }}:</h5>
     {% endif %}
     {% if books %}
-        <div id="id_book_catalog" class="row justify-content-center info-window rounded">
+        <div id="id-book-catalog" class="row justify-content-center info-window rounded">
             {% for book in page_obj %}
                 <div class="card text-end mx-2 my-2">
                     <a href="{% url 'store:book-info' book.pk %}">

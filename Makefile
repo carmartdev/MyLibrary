@@ -5,9 +5,9 @@ MANAGE = $(INTERPRETER) manage.py
 runserver:
 	$(MANAGE) runserver
 
-tests: system_tests unit_tests
+tests: behave unit_tests
 
-system_tests:
+behave:
 	$(MANAGE) behave
 
 unit_tests:

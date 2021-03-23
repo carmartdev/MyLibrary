@@ -9,11 +9,11 @@
         <div class="row">
             {% include "store/backlink.html" with referer=request.session.bookmark %}
         </div>
-        <form id="id_update_form" action="{% url 'store:update' %}" method="POST">
+        <form id="id-update-form" action="{% url 'store:update' %}" method="POST">
             {% csrf_token %}
         </form>
         <div class="row">
-            <table id="id_book_catalog" class="table table-borderless table-striped">
+            <table id="id-book-catalog" class="table table-borderless table-striped">
                 <thead>
                     <tr>
                         <th>№</th>
@@ -42,7 +42,7 @@
                                        size="4"
                                        name="qty {{ item.pk }}"
                                        value="{{ item.qty }}"
-                                       form="id_update_form">
+                                       form="id-update-form">
                             </td>
                             <td>${{ item.total }}</td>
                             <td>
@@ -62,7 +62,7 @@
                     <th></th>
                     <th></th>
                     <th>Subtotal</th>
-                    <th id="id_total_price">${{ total_price }}</th>
+                    <th id="id-total-price">${{ total_price }}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -72,10 +72,10 @@
             <div class="col">
             </div>
             <div class="col-auto">
-                <button name="update" class="btn btn-primary" form="id_update_form">
+                <button name="update" class="btn btn-primary" form="id-update-form">
                     update cart
                 </button>
-                <a id="id_checkout_button" class="btn btn-primary" href="{% url 'store:checkout' %}">
+                <a id="id-checkout-button" class="btn btn-primary" href="{% url 'store:checkout' %}">
                     checkout
                 </a>
             </div>
