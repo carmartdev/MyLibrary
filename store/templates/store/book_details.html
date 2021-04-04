@@ -1,5 +1,5 @@
 {% extends "store/base.html" %}
-{% block title_text %}{{ book.title|title }} by {{ book.authors.all|join:', ' }}{% endblock %}
+{% block title_text %}{{ title|title }} by {{ authors|names }}{% endblock %}
 {% block body %}
     <div class="row">
         {% include "store/backlink.html" with referer=request.session.bookmark %}
@@ -7,30 +7,30 @@
     <div id="id-book-details" class="info-window rounded">
         <div class="row my-2">
             <div class="col-auto my-2">
-                <img src="{{ book.cover }}"
+                <img src="{{ cover }}"
                      class="rounded"
-                     alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
+                     alt="{{ title|title }} by {{ authors|names }}">
             </div>
             <div class="col">
-                <h1>{{ book.title|title }}</h1>
-                <h2>{% include "store/authorslinks.html" with authors=book.authors.all %}</h2>
-                <h4 class="py-3">{{ book.description }}</h4>
-                <p><b>Publisher:</b> {{ book.publisher }}</p>
-                <p><b>Publication date:</b> {{ book.publish_date }}</p>
-                <p><b>ISBN-10:</b> {{ book.isbn_10 }}</p>
-                <p><b>ISBN-13:</b> {{ book.isbn_13 }}</p>
+                <h1>{{ title|title }}</h1>
+                <h2>{% include "store/authorslinks.html" with authors=authors %}</h2>
+                <h4 class="py-3">{{ description }}</h4>
+                <p><b>Publisher:</b> {{ publisher }}</p>
+                <p><b>Publication date:</b> {{ publish_date }}</p>
+                <p><b>ISBN-10:</b> {{ isbn_10 }}</p>
+                <p><b>ISBN-13:</b> {{ isbn_13 }}</p>
             </div>
             <div class="col-auto d-flex flex-column text-end">
-                <h2 class="my-2">${{ book.price }}</h2>
+                <h2 class="my-2">${{ price }}</h2>
                 <div class="mt-auto my-3">
-                    {% if book.pk in request.session.cart %}
+                    {% if key in request.session.cart %}
                         <form action="{% url 'store:cart' %}">
                             <button class="text-uppercase fw-bold btn btn-secondary">
                                 in cart
                             </button>
                         </form>
                     {% else %}
-                        <form action="{% url 'store:add' book.pk %}" method="POST">
+                        <form action="{% url 'store:add' key %}" method="POST">
                             {% csrf_token %}
                             <button class="text-uppercase fw-bold btn btn-outline-secondary">
                                 add to cart

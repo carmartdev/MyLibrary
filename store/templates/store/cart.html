@@ -30,7 +30,7 @@
                         <tr class="align-middle">
                             <td>{{ forloop.counter }}.</td>
                             <td>
-                                <a class="text-body" href="{% url 'store:book-info' item.pk %}">
+                                <a class="text-body" href="{% url 'store:book-detail' item.key %}">
                                     {{ item.title|title }}
                                 </a>
                             </td>
@@ -40,13 +40,13 @@
                                 <input type="number"
                                        min="1"
                                        size="4"
-                                       name="qty {{ item.pk }}"
+                                       name="qty {{ item.key }}"
                                        value="{{ item.qty }}"
                                        form="id-update-form">
                             </td>
                             <td>${{ item.total }}</td>
                             <td>
-                                <form action="{% url 'store:delete' item.pk %}" method="POST">
+                                <form action="{% url 'store:delete' item.key %}" method="POST">
                                     {% csrf_token %}
                                     <button class="btn-close" aria-label="Close">
                                     </button>

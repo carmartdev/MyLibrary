@@ -13,7 +13,7 @@ class Author(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("store:author", args=[self.pk])
+        return f"{reverse('store:book-list')}?author={self.pk}"
 
 
 class Book(models.Model):
@@ -38,4 +38,4 @@ class Book(models.Model):
         return ", ".join(author.name for author in self.authors.all())
 
     def get_absolute_url(self):
-        return reverse("store:book-info", args=[self.pk])
+        return reverse("store:book-detail", args=[self.pk])

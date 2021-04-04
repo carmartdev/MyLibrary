@@ -43,8 +43,15 @@ Feature: Navigation
         When Betty clicks back link
         Then she can see author's page
 
-    Scenario: buyer can search books in catalog
+    Scenario: buyer can search books in catalog from catalog
         Given Betty opens bookstore homepage in her browser
+        When Betty types 'dog' in search bar
+        Then she can see search results for 'dog'
+
+    Scenario: buyer can search books in catalog from book details
+        Given Betty opens bookstore homepage in her browser
+            And Betty clicks on cover of book '1'
+            And she is redirected to page with book details
         When Betty types 'dog' in search bar
         Then she can see search results for 'dog'
 

@@ -7,8 +7,8 @@
         {% endif %}
     {% endif %}
     <a class="text-body text-decoration-none"
-       href="{% url 'store:author' author.pk %}"
-       title="Show more books by {{ author }}">
-        {{ author }}
+       href="{% url 'store:book-list' %}?author={{ author.key }}"
+       title="Show more books by {{ author.name }}">
+        {{ author.name }}
     </a>
 {% endfor %}

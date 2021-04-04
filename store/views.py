@@ -1,47 +1,30 @@
-from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
-from django.utils.html import escape, strip_tags
-from django.views import generic
 from django.views.decorators.http import require_POST
-from store.models import Author, Book
+from rest_framework import filters, viewsets
+from store.models import Book
+from store.serializers import BookSerializer
 
-class HomePage(generic.ListView):
-    model = Book
-    context_object_name = "books"
-    template_name = "store/index.html"
-    paginate_by = 10
+class BookViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = BookSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["title", "authors__name"]
 
     def get_queryset(self):
+        queryset = Book.objects.all()
+        author_id = self.request.query_params.get("author", None)
+        if author_id:
+            queryset = queryset.filter(authors__key__contains=author_id)
+        return queryset
+
+    def list(self, request, *args, **kwargs):
         self.request.session["bookmark"] = self.request.get_full_path()
-        return super().get_queryset()
+        return super().list(self, request, *args, **kwargs)
 
-class Search(HomePage):
-    def get_queryset(self):
-        query = self.kwargs.get("query")
-        query = Q(title__icontains=query) | Q(authors__name__icontains=query)
-        return super().get_queryset().filter(query).distinct()
-
-class AuthorPage(HomePage):
-    def get_queryset(self):
-        pk = self.kwargs.get("author_id")
-        return super().get_queryset().filter(authors__key__contains=pk)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["author"] = Author.objects.get(pk=self.kwargs.get("author_id"))
-        return context
-
-
-def search(request):
-    query = escape(strip_tags(request.GET.get("query")))
-    if query:
-        return redirect("store:search-restful", query=query)
-    else:
-        return redirect("store:home")
-
-class BookInfo(generic.detail.DetailView):
-    model = Book
-    template_name = "store/book_info.html"
+    def get_template_names(self):
+        if self.action == "list":
+            return ["store/index.html"]
+        if self.action == "retrieve":
+            return ["store/book_details.html"]
 
 @require_POST
 def delete_from_cart(request, item_id):

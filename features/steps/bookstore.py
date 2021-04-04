@@ -141,7 +141,7 @@ def checkout_page_loaded(context):
 
 @step("Betty navigates to page '{page_num}'")
 def navigate_to_page(context, page_num):
-    context.browser.get(f"{context.base_url}/?page={page_num}")
+    context.browser.get(f"{context.base_url}/books/?page={page_num}")
 
 @step("Betty clicks on cover of book '{number}'")
 def click_on_book_cover(context, number):
@@ -150,7 +150,7 @@ def click_on_book_cover(context, number):
 
 @step("Betty clicks on author name '{number}'")
 def click_on_author_name(context, number):
-    path = ("(//a[starts-with(@href, '/author/') and "
+    path = ("(//a[starts-with(@href, '/books/?author=') and "
             f"starts-with(@title, 'Show more books by')])[{number}]")
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
@@ -172,7 +172,7 @@ def check_buyer_is_redirected_to_book_details(context):
 
 @step("Betty types '{keyword}' in search bar")
 def search(context, keyword):
-    search = wait_for(lambda: context.browser.find_element_by_name("query"))
+    search = wait_for(lambda: context.browser.find_element_by_name("search"))
     search.send_keys(keyword)
     search.send_keys(Keys.ENTER)
 

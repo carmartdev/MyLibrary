@@ -1,31 +1,31 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
 {% block body %}
-    {% if view.kwargs.query %}
-        <h5>Search results for "{{ view.kwargs.query }}":</h5>
-    {% elif author %}
-        <h5>Books by {{ author }}:</h5>
+    {% if request.GET.search %}
+        <h5>Search results for "{{ request.GET.search }}":</h5>
+    {% elif request.GET.author %}
+        <h5>Books by {{ request.GET.author.name }}:</h5>
     {% endif %}
-    {% if books %}
+    {% if results %}
         <div id="id-book-catalog" class="row justify-content-center info-window rounded">
-            {% for book in page_obj %}
+            {% for book in results %}
                 <div class="card text-end mx-2 my-2">
-                    <a href="{% url 'store:book-info' book.pk %}">
+                    <a href="{% url 'store:book-detail' book.key %}">
                         <img src="{{ book.cover }}"
                              class="card-img-top"
-                             alt="{{ book.title|title }} by {{ book.authors.all|join:', ' }}"
-                             title="{{ book.title|title }} by {{ book.authors.all|join:', ' }}">
+                             alt="{{ book.title|title }} by {{ book.authors|names }}"
+                             title="{{ book.title|title }} by {{ book.authors|names }}">
                     </a>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text fw-bold">${{ book.price }}</p>
-                        {% if book.pk in request.session.cart %}
+                        {% if book.key in request.session.cart %}
                             <form action="{% url 'store:cart' %}">
                                 <button class="text-uppercase fw-bold btn btn-secondary">
                                     in cart
                                 </button>
                             </form>
                         {% else %}
-                            <form action="{% url 'store:add' book.pk %}" method="POST">
+                            <form action="{% url 'store:add' book.key %}" method="POST">
                                 {% csrf_token %}
                                 <button class="text-uppercase fw-bold btn btn-outline-secondary">
                                     add to cart
@@ -41,24 +41,30 @@
     {% endif %}
     <nav class="row mx-2 my-2" aria-label="book catalog pages">
         <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
+            {% if previous %}
                 <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
                 <li class="page-item">
-                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                  <a class="page-link" href="{{ previous }}" aria-label="Previous">
                     <span aria-hidden="true">&lt;</span>
                   </a>
                 </li>
             {% endif %}
             <li class="page-item active">
-              <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+                {% if request.GET.page %}
+                    <a class="page-link" href="{{ request.get_full_path }}">{{ request.GET.page }}</a>
+                {% else %}
+                    <a class="page-link" href="?page=1">1</a>
+                {% endif %}
             </li>
-            {% if page_obj.has_next %}
+            {% if next %}
                 <li class="page-item">
-                  <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                  <a class="page-link" href="{{ next }}" aria-label="Next">
                     <span aria-hidden="true">&gt;</span>
                   </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a></li>
+                {% with per_page=results|length %}
+                    <li class="page-item"><a class="page-link" href="?page={{ count|div:per_page }}">&raquo;</a></li>
+                {% endwith %}
             {% endif %}
         </ul>
     </nav>
