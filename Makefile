@@ -33,15 +33,21 @@ store/fixtures/authors.json:
 
 store/fixtures/books.json: store/fixtures/authors.json
 
-update: | sync_with_git recreate_static
+update: sync_with_git recreate_static
 
 sync_with_git:
 	git fetch
 	git reset origin/main --hard
 
-recreate_static:
+recreate_static: store/static/bootstrap
 	rm -rf static/
 	python manage.py collectstatic
+
+store/static/bootstrap:
+	wget -O store/static/bootstrap.zip https://github.com/twbs/bootstrap/releases/download/v5.0.0-beta1/bootstrap-5.0.0-beta1-dist.zip
+	unzip store/static/bootstrap.zip -d store/static/
+	rm store/static/bootstrap.zip
+	mv store/static/bootstrap-*/ store/static/bootstrap/
 
 coverage_measure:
 	coverage run --source=store --omit=*/tests.py,*/apps.py,*/migrations/* \

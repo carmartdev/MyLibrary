@@ -136,3 +136,6 @@ geckodriver.log
 
 # archives
 *.gz
+
+# bootstrap
+store/static/bootstrap/*
