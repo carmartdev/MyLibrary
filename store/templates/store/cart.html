@@ -9,7 +9,7 @@
         <div class="row">
             {% include "store/backlink.html" with referer=request.session.bookmark %}
         </div>
-        <form id="id-update-form" action="{% url 'store:update' %}" method="POST">
+        <form id="id-update-form" action="{% url 'store:cart-update' %}" method="POST">
             {% csrf_token %}
         </form>
         <div class="row">
@@ -46,9 +46,11 @@
                             </td>
                             <td>${{ item.total }}</td>
                             <td>
-                                <form action="{% url 'store:delete' item.key %}" method="POST">
+                                <form action="{% url 'store:cart-delete' %}" method="POST">
                                     {% csrf_token %}
-                                    <button class="btn-close" aria-label="Close">
+                                    <button class="btn-close" aria-label="Delete"
+                                            name="book_id"
+                                            value="{{ item.key }}">
                                     </button>
                                 </form>
                             </td>

@@ -25,9 +25,11 @@
                                 </button>
                             </form>
                         {% else %}
-                            <form action="{% url 'store:add' book.key %}" method="POST">
+                            <form action="{% url 'store:cart-add' %}" method="POST">
                                 {% csrf_token %}
-                                <button class="text-uppercase fw-bold btn btn-outline-secondary">
+                                <button class="text-uppercase fw-bold btn btn-outline-secondary"
+                                        name="book_id"
+                                        value="{{ book.key }}">
                                     add to cart
                                 </button>
                             </form>
