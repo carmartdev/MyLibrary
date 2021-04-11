@@ -4,7 +4,7 @@
     {% if request.GET.search %}
         <h5>Search results for "{{ request.GET.search }}":</h5>
     {% elif request.GET.author %}
-        <h5>Books by {{ request.GET.author.name }}:</h5>
+        <h5>Books by {{ request.GET.author|author_name_by_id }}:</h5>
     {% endif %}
     {% if results %}
         <div id="id-book-catalog" class="row justify-content-center info-window rounded">

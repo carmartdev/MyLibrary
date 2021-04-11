@@ -143,9 +143,9 @@ def checkout_page_loaded(context):
 def navigate_to_page(context, page_num):
     context.browser.get(f"{context.base_url}/books/?page={page_num}")
 
-@step("Betty clicks on cover of book '{number}'")
-def click_on_book_cover(context, number):
-    path = f"(//img[contains(@class, 'card-img-top')])[{number}]"
+@step("Betty clicks on cover of book '{title}' by '{authors}'")
+def click_on_book_cover(context, title, authors):
+    path = f"//img[@alt='{title} by {authors}']"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @step("Betty clicks on author name '{number}'")
@@ -154,9 +154,9 @@ def click_on_author_name(context, number):
             f"starts-with(@title, 'Show more books by')])[{number}]")
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
-@step("she can see author's page")
-def buyer_can_see_books_for_author(context):
-    path = f"//h5[starts-with(text(), 'Books by ')]"
+@step("she can see books by '{author}'")
+def buyer_can_see_books_for_author(context, author):
+    path = f"//h5[contains(text(), 'Books by {author}')]"
     wait_for(lambda: context.browser.find_element_by_xpath(path))
 
 @when("Betty clicks back link")

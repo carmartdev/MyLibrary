@@ -27,7 +27,7 @@ Feature: Shopping Cart
     Scenario: buyer can add book to cart from book description
         Given Betty opens bookstore homepage in her browser
             And there is no counter near cart link
-            And Betty clicks on cover of book '1'
+            And Betty clicks on cover of book '100 Malicious Little Mysteries' by 'Isaac Asimov'
         When Betty adds book to cart
         Then counter near cart link shows '1'
 
