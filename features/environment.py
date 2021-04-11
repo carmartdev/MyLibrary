@@ -17,9 +17,10 @@ def rmdir(path):
     os.rmdir(path)
 
 @fixture
-def selenium_browser_firefox(context):
+def selenium_browser_firefox(context, js_enabled=True):
     options = Options()
-    # options.headless = True
+    options.headless = True
+    options.set_preference("javascript.enabled", js_enabled)
     context.browser = webdriver.Firefox(
         firefox_binary=FirefoxBinary(BROWSER_PATH),
         service_log_path=os.devnull,
@@ -34,5 +35,8 @@ def selenium_browser_firefox(context):
         rmdir(tmpdir)
 
 def before_all(context):
-    use_fixture(selenium_browser_firefox, context)
     context.fixtures = ["authors.json", "books.json"]
+
+def before_feature(context, feature):
+    use_fixture(selenium_browser_firefox, context,
+                js_enabled="javascript" in feature.tags)
