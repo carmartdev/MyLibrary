@@ -181,14 +181,9 @@ def buyer_can_see_search_results_for(context, keyword):
     path = f"//h5[contains(text(), 'Search results for \"{keyword}\"')]"
     wait_for(lambda: context.browser.find_element_by_xpath(path))
 
-@when("Betty clicks on next page")
-def click_on_next_page(context):
-    path = "//a[@aria-label='Next']"
-    wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
-
-@when("Betty clicks on previous page")
-def click_on_previous_page(context):
-    path = "//a[@aria-label='Previous']"
+@when("Betty clicks on page '{number}'")
+def click_on_page_number(context, number):
+    path = f"//a[normalize-space(text())='{number}']"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @step("active page shows '{number:n}'")

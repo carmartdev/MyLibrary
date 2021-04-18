@@ -6,11 +6,11 @@ Feature: Navigation
     Scenario: buyer can navigate through catalog via pagination bar
         Given Betty opens bookstore homepage in her browser
             And active page shows '1'
-        When Betty clicks on next page
+        When Betty clicks on page '2'
         Then active page shows '2'
 
         Given active page shows '2'
-        When Betty clicks on previous page
+        When Betty clicks on page '1'
         Then active page shows '1'
 
     Scenario: buyer can see description by clicking on book cover
@@ -60,9 +60,9 @@ Feature: Navigation
             And Betty types 'cat' in search bar
             And she can see search results for 'cat'
             And active page shows '1'
-        When Betty clicks on next page
+        When Betty clicks on page '2'
         Then active page shows '2'
-        When Betty clicks on previous page
+        When Betty clicks on page '1'
         Then active page shows '1'
 
     Scenario: buyer can return back to search results after seeing description

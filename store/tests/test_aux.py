@@ -1,5 +1,5 @@
 from django.test import TestCase
-from store.templatetags.aux import extract_keywords, names, div
+from store.templatetags.aux import extract_keywords, names
 
 class AuxTest(TestCase):
     def test_extract_keywords(self):
@@ -9,6 +9,3 @@ class AuxTest(TestCase):
     def test_names(self):
         nlist = [{"name": name} for name in ("Alice", "Bob")]
         self.assertEqual(names(nlist),"Alice, Bob")
-
-    def test_div(self):
-        self.assertEqual(div(9, 2), 5)

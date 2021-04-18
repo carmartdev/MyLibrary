@@ -43,31 +43,33 @@
     {% endif %}
     <nav class="row mx-2 my-2" aria-label="book catalog pages">
         <ul class="pagination justify-content-center">
-            {% if previous %}
-                <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="{{ previous }}" aria-label="Previous">
-                    <span aria-hidden="true">&lt;</span>
-                  </a>
-                </li>
-            {% endif %}
-            <li class="page-item active">
-                {% if request.GET.page %}
-                    <a class="page-link" href="{{ request.get_full_path }}">{{ request.GET.page }}</a>
+            {% for page_link in page_links %}
+                {% if page_link.is_break %}
+                    <li class="page-item">
+                        <a class="page-link disabled" href="#">
+                            <span aria-hidden="true">&hellip;</span>
+                        </a>
+                    </li>
                 {% else %}
-                    <a class="page-link" href="?page=1">1</a>
+                    {% if page_link.is_active %}
+                        <li class="page-item active">
+                            <a class="page-link"
+                               href="{{ page_link.url }}"
+                               aria-label="{{ page_link.number }}">
+                                {{ page_link.number }}
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="{{ page_link.url }}"
+                               aria-label="{{ page_link.number }}">
+                                {{ page_link.number }}
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endif %}
-            </li>
-            {% if next %}
-                <li class="page-item">
-                  <a class="page-link" href="{{ next }}" aria-label="Next">
-                    <span aria-hidden="true">&gt;</span>
-                  </a>
-                </li>
-                {% with per_page=results|length %}
-                    <li class="page-item"><a class="page-link" href="?page={{ count|div:per_page }}">&raquo;</a></li>
-                {% endwith %}
-            {% endif %}
+            {% endfor %}
         </ul>
     </nav>
 </div>

@@ -17,7 +17,3 @@ def names(lst):
 @register.filter
 def author_name_by_id(author_id):
     return Author.objects.get(pk=author_id).name
-
-@register.filter
-def div(dividend, divisor):
-    return dividend // divisor + (dividend % divisor > 0)
