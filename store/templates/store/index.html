@@ -9,12 +9,12 @@
     {% if results %}
         <div id="id-book-catalog" class="row justify-content-center info-window rounded">
             {% for book in results %}
-                <div class="card text-end mx-2 my-2">
+                <div class="card text-end mx-2 my-2 px-0 py-0">
                     <a href="{% url 'store:book-detail' book.key %}">
                         <img src="{{ book.cover }}"
                              class="card-img-top"
                              alt="{{ book.title|title }} by {{ book.authors|names }}"
-                             title="{{ book.title|title }} by {{ book.authors|names }}">
+                             title="{{ book.title|title }} by {{ book.authors|names }}" />
                     </a>
                     <div class="card-body d-flex flex-column">
                         <p class="card-text fw-bold">${{ book.price }}</p>
