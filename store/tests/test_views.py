@@ -2,6 +2,7 @@ import json
 from django.test import TestCase
 from django.urls import reverse
 from store.models import Author, Book
+from store.serializers import BookSerializer
 
 def create_book(key, title, price):
     book = Book(key=key, title=title, price=price)
@@ -86,20 +87,27 @@ class CartTest(TestCase):
     def test_cart_page_contains_books_in_cart_html(self):
         book = create_book(key=1, title="test", price=10)
         session = self.client.session
-        session["cart"] = {book.pk: 1}
+        qty = 2
+        session["cart"] = {book.pk: qty}
         session.save()
         response = self.client.get(reverse("store:cart"))
-        self.assertQuerysetEqual(list(response.context["cart"]), [repr(book)])
+        self.assertListEqual(response.context["cart"],
+                             [dict(qty=qty,
+                                   total=book.price * qty,
+                                   **BookSerializer(book).data)])
 
     def test_cart_page_contains_books_in_cart_json(self):
         book = create_book(key=1, title="test", price=10)
         session = self.client.session
-        session["cart"] = {book.pk: 1}
+        qty = 5
+        session["cart"] = {book.pk: qty}
         session.save()
         response = self.client.get(reverse("store:cart"),
                                    HTTP_ACCEPT="application/json")
-        book_in_cart = json.loads(response.content.decode("utf8"))["cart"][0]
-        self.assertEqual(book_in_cart["title"], book.title)
+        self.assertListEqual(json.loads(response.content.decode())["cart"],
+                             [dict(qty=qty,
+                                   total=f"{book.price * qty:.2f}",
+                                   **BookSerializer(book).data)])
 
     def test_delete_redirects_to_cart(self):
         book = create_book(key=1, title="test", price=10)

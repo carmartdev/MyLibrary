@@ -63,17 +63,15 @@ def add_to_cart(request):
 
 def show_cart(request):
     cart = request.session.get("cart", {})
-    books_in_cart = Book.objects.filter(key__in=cart.keys())
-    for book in books_in_cart:
-        book.qty = cart[book.pk]
-        book.total = book.qty * book.price
-    total_price = sum(i.total for i in books_in_cart)
+    response = {"cart": [dict(qty=cart[book.pk],
+                              total=cart[book.pk] * book.price,
+                              **BookSerializer(book).data)
+                         for book in Book.objects.filter(key__in=cart.keys())]}
+    response["total_price"] = sum(book["total"] for book in response["cart"])
     if "application/json" in get_acceptable_media_types(request):
-        return JsonResponse({"cart": list(books_in_cart.values()),
-                             "total_price": total_price})
+        return JsonResponse(response)
     else:
-        return render(request, "store/cart.html",
-                      {"cart": books_in_cart, "total_price": total_price})
+        return render(request, "store/cart.html", response)
 
 def get_acceptable_media_types(request):
     return request.META.get("HTTP_ACCEPT", "*/*").split(",")

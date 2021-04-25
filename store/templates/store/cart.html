@@ -34,7 +34,7 @@
                                     {{ item.title|title }}
                                 </a>
                             </td>
-                            <td>{% include "store/authorslinks.html" with authors=item.authors.all %}</td>
+                            <td>{% include "store/authorslinks.html" with authors=item.authors %}</td>
                             <td>${{ item.price }}</td>
                             <td>
                                 <input type="number"
