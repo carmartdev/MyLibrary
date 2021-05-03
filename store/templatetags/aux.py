@@ -13,7 +13,3 @@ def extract_keywords(uri):
 @register.filter
 def names(lst):
     return ", ".join(d["name"] for d in lst)
-
-@register.filter
-def author_name_by_id(author_id):
-    return Author.objects.get(pk=author_id).name

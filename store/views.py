@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
 from rest_framework import filters, viewsets
-from store.models import Book
+from store.models import Author, Book
 from store.serializers import BookSerializer
 
 class BookViewSet(viewsets.ReadOnlyModelViewSet):
@@ -19,7 +19,14 @@ class BookViewSet(viewsets.ReadOnlyModelViewSet):
 
     def list(self, request, *args, **kwargs):
         self.request.session["bookmark"] = self.request.get_full_path()
-        return super().list(self, request, *args, **kwargs)
+        response = super().list(self, request, *args, **kwargs)
+        author_id = self.request.query_params.get("author", None)
+        if author_id:
+            response.data["author"] = Author.objects.get(pk=author_id).name
+        search_keyword = self.request.query_params.get("search", None)
+        if search_keyword:
+            response.data["keyword"] = search_keyword
+        return response
 
     def get_template_names(self):
         if self.action == "list":

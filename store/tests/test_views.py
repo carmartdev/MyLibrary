@@ -29,6 +29,15 @@ class BookViewSetTest(TestCase):
         response = self.client.get("/", {"search": "cat"}, follow=True)
         self.assertTemplateUsed(response, "store/index.html")
 
+    def test_search_contains_keyword(self):
+        keyword = "icecream"
+        response = self.client.get(reverse("store:book-list"),
+                                   {"search": keyword},
+                                   HTTP_ACCEPT="application/json",
+                                   follow=True)
+        self.assertEqual(json.loads(response.content.decode())["keyword"],
+                         keyword)
+
     def test_search_contains_books_with_keyword(self):
         book = create_book(key=1, title="Catdog", price=10)
         response = self.client.get("/", {"search": "cat"}, follow=True)

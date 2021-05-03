@@ -1,10 +1,10 @@
 {% extends "store/base.html" %}
 {% block title_text %}Bookstore{% endblock %}
 {% block body %}
-    {% if request.GET.search %}
-        <h5>Search results for "{{ request.GET.search }}":</h5>
-    {% elif request.GET.author %}
-        <h5>Books by {{ request.GET.author|author_name_by_id }}:</h5>
+    {% if keyword %}
+        <h5>Search results for "{{ keyword }}":</h5>
+    {% elif author %}
+        <h5>Books by {{ author }}:</h5>
     {% endif %}
     {% if results %}
         <div id="id-book-catalog" class="row justify-content-center info-window rounded">
