@@ -39,7 +39,7 @@ Feature: Shopping Cart
         Then counter near cart link shows '1'
         When Betty adds to cart book '1'
         Then she is redirected to cart page
-        When Betty clicks back link
+        When Betty clicks close button
         Then counter near cart link shows '1'
 
     Scenario: buyer can add to cart as many different books as she wants

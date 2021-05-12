@@ -2,7 +2,7 @@
 {% block title_text %}Checkout{% endblock %}
 {% block header %}{% endblock %}
 {% block body %}
-    <div class="row vh-100 align-items-center text-center">
+    <div id="checkout" class="row vh-100 align-items-center text-center">
         <div>
             <h1 class="my-3">This is a demo store. You can't buy a real thing here.</h1>
             {% include "store/backlink.html" with referer=request.session.bookmark %}

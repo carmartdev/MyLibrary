@@ -26,8 +26,9 @@ def load_home_page(context):
 @then("she notices the page title and header mention '{title}'")
 def page_title_and_header_mention_bookstore(context, title):
     context.test.assertIn(title, context.browser.title)
-    context.test.assertIn(title,
-                          context.browser.find_element_by_tag_name('h1').text)
+    path = f"//div[contains(@class, 'container')]//h1"
+    header = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    context.test.assertIn(title, header.text)
 
 @then("she can see book catalog on main page")
 def book_catalog_on_main_page(context):
@@ -45,13 +46,24 @@ def cart_link_is_in_top_right_corner(context):
     context.test.assertAlmostEqual(cart.location["y"], 0, delta=20)
 
 @when("Betty adds book to cart")
+def add_book_to_cart(context):
+    path = (f"//form[starts-with(@action, '/cart/')]/button | "
+            "//div[@id='bookDetails']//button[text()='add to cart']")
+    button = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    while not button.is_displayed():
+        sleep(0.5)
+    button.click()
+
 @step("Betty adds to cart book '{number:n}'")
-def add_book_to_cart(context, number=1):
-    path = f"(//form[starts-with(@action, '/cart/')])[{number}]/button"
-    wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
+def add_to_cart_book_number(context, number):
+    path = f"(//div[contains(@class, 'card')]//button)[{number}]"
+    button = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    while not button.is_displayed():
+        sleep(0.5)
+    button.click()
 
 @given("Betty adds to cart book '{title}' by '{authors}'")
-def add_book_to_cart(context, title, authors):
+def add_to_cart_book_by(context, title, authors):
     path = f"//img[@alt='{title} by {authors}']/following::button"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
@@ -67,7 +79,7 @@ def counter_shows(context, number):
 
 @then("button near book '{number}' now says '{button_caption}'")
 def button_near_book_says(context, number, button_caption):
-    path = f"(//form[starts-with(@action, '/cart/')])[{number}]/button"
+    path = f"(//div[contains(@class, 'card')]//button)[{number}]"
     button = wait_for(lambda: context.browser.find_element_by_xpath(path))
     context.test.assertEqual(button.text.upper(), "in cart".upper())
 
@@ -91,7 +103,9 @@ def click_cart_button(context):
 @given("Betty is on cart page")
 @step("she is redirected to cart page")
 def buyer_can_see_her_cart(context):
-    context.test.assertIn("cart".upper(), context.browser.title.upper())
+    path = "//div/*[contains(text(), 'Your Shopping Cart')]"
+    cart = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    context.test.assertTrue(cart.is_displayed())
 
 @step("she can see book '{title}' in her cart")
 def buyer_can_see_book_in_her_cart(context, title):
@@ -118,7 +132,12 @@ def change_book_qty(context, title, qty):
     qty_input.send_keys(Keys.CONTROL, 'a')
     qty_input.send_keys(Keys.DELETE)
     qty_input.send_keys(qty)
-    wait_for(lambda: context.browser.find_element_by_name("update")).click()
+    try:
+        name = "update"
+        wait_for(lambda: context.browser.find_element_by_name(name)).click()
+    except NoSuchElementException:
+        pass
+
 
 @when("Betty deletes from cart book '{title}'")
 def delete_book_from_cart(context, title):
@@ -132,12 +151,13 @@ def subtotal_is(context, value):
 
 @when("Betty clicks «checkout» button")
 def click_checkout(context):
-    wait_for(lambda: context.browser.find_element_by_id("id-checkout-button")
-             ).click()
+    _id = "id-checkout-button"
+    wait_for(lambda: context.browser.find_element_by_id(_id)).click()
 
 @then("she is redirected to checkout page")
 def checkout_page_loaded(context):
-    context.test.assertIn("Checkout", context.browser.title)
+    checkout = wait_for(lambda: context.browser.find_element_by_id("checkout"))
+    context.test.assertTrue(checkout.is_displayed())
 
 @step("Betty navigates to page '{page_num}'")
 def navigate_to_page(context, page_num):
@@ -145,23 +165,32 @@ def navigate_to_page(context, page_num):
 
 @step("Betty clicks on cover of book '{title}' by '{authors}'")
 def click_on_book_cover(context, title, authors):
-    path = f"//img[@alt='{title} by {authors}']"
+    path = f"//div[contains(@class, 'card')]//img[@alt='{title} by {authors}']"
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @step("Betty clicks on author name '{number}'")
 def click_on_author_name(context, number):
-    path = ("(//a[starts-with(@href, '/books/?author=') and "
+    path = ("(//a[contains(@href, '/books/?author=') and "
             f"starts-with(@title, 'Show more books by')])[{number}]")
     wait_for(lambda: context.browser.find_element_by_xpath(path)).click()
 
 @step("she can see books by '{author}'")
 def buyer_can_see_books_for_author(context, author):
-    path = f"//h5[contains(text(), 'Books by {author}')]"
-    wait_for(lambda: context.browser.find_element_by_xpath(path))
+    path = "//h5[contains(text(), 'Books by')]"
+    header = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    context.test.assertIn(f"Books by {author}", header.text)
 
 @when("Betty clicks back link")
 def click_on_back_link(context):
     wait_for(lambda: context.browser.find_element_by_id("id-backlink")).click()
+
+@when("Betty clicks close button")
+def click_close_button(context):
+    path = "//button[contains(@class, 'btn-close')]"
+    buttons = wait_for(lambda: context.browser.find_elements_by_id(path))
+    for button in buttons:
+        if button.is_displayed():
+            button.click()
 
 @step("she is redirected to page with book details")
 def check_buyer_is_redirected_to_book_details(context):
@@ -178,8 +207,9 @@ def search(context, keyword):
 
 @step("she can see search results for '{keyword}'")
 def buyer_can_see_search_results_for(context, keyword):
-    path = f"//h5[contains(text(), 'Search results for \"{keyword}\"')]"
-    wait_for(lambda: context.browser.find_element_by_xpath(path))
+    path = f"//h5[contains(text(), 'Search results for')]"
+    header = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    context.test.assertIn(f"Search results for \"{keyword}\"", header.text)
 
 @when("Betty clicks on page '{number}'")
 def click_on_page_number(context, number):
@@ -189,5 +219,8 @@ def click_on_page_number(context, number):
 @step("active page shows '{number:n}'")
 def active_page_is(context, number):
     path = f"//li[contains(@class, 'active')]/a"
+    active_page = wait_for(lambda: context.browser.find_element_by_xpath(path))
+    if f"?page={number}" not in active_page.get_attribute("href"):
+        sleep(0.5)  # wait for JS code to update page
     active_page = wait_for(lambda: context.browser.find_element_by_xpath(path))
     context.test.assertIn(f"?page={number}", active_page.get_attribute("href"))

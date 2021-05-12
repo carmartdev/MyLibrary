@@ -41,6 +41,9 @@
     {% else %}
         <p>No books are available.</p>
     {% endif %}
+{% endblock %}
+{% block footer %}
+<footer class="row py-3">
     <nav class="row mx-2 my-2" aria-label="book catalog pages">
         <ul class="pagination justify-content-center">
             {% for page_link in page_links %}
@@ -72,5 +75,10 @@
             {% endfor %}
         </ul>
     </nav>
-</div>
+    <div class="col text-center">
+        All books data is borrowed from&nbsp;
+        <a href="https://openlibrary.org/">Open Library</a>;&nbsp;
+        prices are generated randomly
+    </div>
+</footer>
 {% endblock %}

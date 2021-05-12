@@ -10,7 +10,7 @@ body {
 }
 
 .search-bar {
-    min-width: 50vw;
+    min-width: 50%;
 }
 
 .content {
@@ -29,7 +29,7 @@ body {
     background-color: #ffe6ac;
 }
 
-footer {
+footer > div {
     font-size: 0.8rem;
     width: 100%;
 }
@@ -45,4 +45,16 @@ footer {
 
 .pagination > li > a {
     background-color: #ffe6ac;
+}
+
+.pagination > li > button {
+    background-color: #ffe6ac;
+}
+
+.modal-header {
+    border-bottom: 0 none;
+}
+
+.modal-footer {
+    border-top: 0 none;
 }

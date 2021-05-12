@@ -12,49 +12,52 @@
               href="{% static 'store/favicon.ico' %}" />
         <title>{% block title_text %}{% endblock %}</title>
     </head>
-    <body class="vh-100">
+    <body>
         <noscript>
-            <div class="container content">
-                {% block header %}
-                <header class="row align-items-center">
-                    <a class="col-auto text-body text-decoration-none" href="{% url 'store:home' %}">
-                        <h1>Bookstore</h1>
-                    </a>
-                    <form class="col input-group search-bar" action="{% url 'store:book-list' %}">
-                        <input name="search" type="text" class="form-control" aria-label="Search catalog">
-                        <button class="btn search-btn input-group-text" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="col-auto">
-                        <a id="id-cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
-                                                              href="{% url 'store:cart' %}">
-                            🛒 Cart
-                            {% if request.session.cart|length %}
-                            [{{ request.session.cart|length }}]
-                            {% endif %}
+            <div class="vh-100 d-flex flex-column">
+                <div class="container content">
+                    {% block header %}
+                    <header class="row align-items-center">
+                        <a class="col-auto text-body text-decoration-none" href="{% url 'store:home' %}">
+                            <h1>Bookstore</h1>
                         </a>
+                        <form class="col input-group search-bar" action="{% url 'store:book-list' %}">
+                            <input name="search" type="text" class="form-control" aria-label="Search catalog">
+                            <button class="btn search-btn input-group-text" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                        <div class="col-auto">
+                            <a id="id-cart" title="Shopping Cart" class="text-uppercase fw-bold btn btn-outline-secondary"
+                                                                  href="{% url 'store:cart' %}">
+                                🛒 Cart
+                                {% if request.session.cart|length %}
+                                [{{ request.session.cart|length }}]
+                                {% endif %}
+                            </a>
+                        </div>
+                    </header>
+                    {% endblock %}
+                    <div class="row">
+                        {% block body %}{% endblock %}
                     </div>
-                </header>
+                </div>
+                {% block footer %}
+                <footer class="row py-3">
+                    <div class="col text-center">
+                        All books data is borrowed from&nbsp;
+                        <a href="https://openlibrary.org/">Open Library</a>;&nbsp;
+                        prices are generated randomly
+                    </div>
+                </footer>
                 {% endblock %}
-                <div class="row">
-                    {% block body %}{% endblock %}
-                </div>
             </div>
-            {% block footer %}
-            <footer class="row py-3">
-                <div class="col text-center">
-                    All books data is borrowed from&nbsp;
-                    <a href="https://openlibrary.org/">Open Library</a>;&nbsp;
-                    prices are generated randomly
-                </div>
-            </footer>
-            {% endblock %}
         </noscript>
         <script src="{% static 'react/react.production.min.js' %}"></script>
         <script src="{% static 'react/react-dom.production.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'js/index.js' %}"></script>
     </body>
 </html>

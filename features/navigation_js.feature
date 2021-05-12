@@ -30,7 +30,7 @@ Feature: Navigation
             And Betty navigates to page '2'
             And Betty clicks on cover of book 'A  Grandma Like Yours' by 'Andria Warmflash Rosenbaum'
             And she is redirected to page with book details
-        When Betty clicks back link
+        When Betty clicks close button
         Then she can see book catalog on main page
             And active page shows '2'
 
@@ -41,7 +41,7 @@ Feature: Navigation
             And she can see books by 'Isaac Asimov'
             And Betty clicks on cover of book '100 Malicious Little Mysteries' by 'Isaac Asimov'
             And she is redirected to page with book details
-        When Betty clicks back link
+        When Betty clicks close button
         Then she can see books by 'Isaac Asimov'
 
     Scenario: buyer can search books in catalog from catalog
@@ -72,5 +72,5 @@ Feature: Navigation
             And she can see search results for 'bear'
             And Betty clicks on cover of book 'Mama Bear' by 'Natalie Quintart'
             And she is redirected to page with book details
-        When Betty clicks back link
+        When Betty clicks close button
         Then she can see search results for 'bear'
