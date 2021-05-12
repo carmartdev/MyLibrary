@@ -68,8 +68,7 @@ minify_html: $(NPX)/html-minifier-terser
 		--output-dir store/templates/store-min/ \
 		--collapse-whitespace --remove-comments --remove-optional-tags \
 		--remove-redundant-attributes --remove-script-type-attributes \
-		--remove-tag-whitespace --use-short-doctype --minify-css true \
-		--minify-js true
+		--minify-css true --minify-js true
 	rm -r store/templates/store/
 	mv store/templates/store-min/ store/templates/store/
 
