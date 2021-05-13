@@ -534,6 +534,7 @@ class Root extends React.Component {
 
     updateBookDetails(url) {
         window.history.pushState("", "", "/");
+        this.setState({book: {authors: []}});
         fetch(url, {headers: {"Accept": "application/json"}})
             .then(response => response.json())
             .then(response => {this.setState({book: response})},
